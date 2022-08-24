@@ -55,9 +55,11 @@ export const Flex = styled("div", {
 		mr: sizes("mr"),
 
 		bg: {
-			default: { bg: "$bg" },
-			secondary: { bg: "$bgSecondary" },
-			tertiary: { bg: "$bgTertiary" },
+			gray: { bg: "$gray" },
+			white: { bg: "$white" },
+			gradientOrange: { bg: "$gradientOrange" },
+			gradientWhite: { bg: "$gradientWhite" },
+			gradientYellow: { bg: "$gradientYellow" },
 		},
 	},
 });

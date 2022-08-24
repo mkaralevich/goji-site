@@ -41,11 +41,12 @@ export const {
 		radii: {
 			img: "8px",
 			button: "32px",
+			round: "999px",
 		},
 
 		shadows: {
 			elevation:
-				"drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.12)) drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.08))",
+				"0px 4px 24px rgba(0, 0, 0, 0.12), 0px 1px 4px rgba(0, 0, 0, 0.08)",
 		},
 
 		zIndices: {

@@ -1,6 +1,13 @@
 import { styled } from "../../styles/stitches.config";
 
 export const t = {
+	600: {
+		fontSize: "28px",
+		lineHeight: "32px",
+		letterSpacing: "2%",
+		fontWeight: 400,
+		"@sm": { fontSize: "64px", lineHeight: "72px" },
+	},
 	500: {
 		fontSize: "28px",
 		lineHeight: "32px",
@@ -13,40 +20,40 @@ export const t = {
 		lineHeight: "32px",
 		fontWeight: 400,
 		fontFamily: "$sans",
-		"@sm": { fontSize: "40px", lineHeight: "56px" },
+		"@sm": { fontSize: "32px", lineHeight: "48px" },
 	},
 	400: {
 		fontSize: "24px",
 		lineHeight: "32px",
 		fontWeight: 400,
-		fontFamily: "$mono",
+		fontFamily: "$sans",
 		"@sm": { fontSize: "40px", lineHeight: "56px" },
 	},
 	300: {
 		fontSize: "18px",
 		lineHeight: "24px",
 		fontWeight: 400,
-		fontFamily: "$mono",
+		fontFamily: "$sans",
 		"@sm": { fontSize: "28px", lineHeight: "48px" },
 	},
 	200: {
 		fontSize: "18px",
 		lineHeight: "24px",
 		fontWeight: 400,
-		fontFamily: "$mono",
+		fontFamily: "$sans",
 		"@sm": { fontSize: "24px", lineHeight: "40px" },
 	},
 	150: {
 		fontSize: "18px",
 		lineHeight: "24px",
-		fontWeight: 500,
-		fontFamily: "$mono",
+		fontWeight: 600,
+		fontFamily: "$sans",
 	},
 	100: {
 		fontSize: "18px",
 		lineHeight: "24px",
 		fontWeight: 400,
-		fontFamily: "$mono",
+		fontFamily: "$sans",
 	},
 };
 

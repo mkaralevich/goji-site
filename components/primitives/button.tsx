@@ -1,7 +1,9 @@
-import { styled } from "../../styles/stitches.config";
+import { ForwardRefComponent, HTMLMotionProps, motion } from "framer-motion";
+import * as React from "react";
+import { CSS, styled } from "../../styles/stitches.config";
 import { t } from "./text";
 
-export const Button = styled("button", {
+const _Button = styled(motion.button, {
 	all: "unset",
 	boxSizing: "border-box",
 	userSelect: "none",
@@ -27,3 +29,21 @@ export const Button = styled("button", {
 	fg: "$orange",
 	w: "fit-content",
 });
+
+type ButtonOwnProps = React.ComponentProps<typeof motion.button> & {
+	css?: CSS;
+	children?: React.ReactNode;
+};
+
+export const Button = React.forwardRef<
+	React.ElementRef<typeof _Button>,
+	ButtonOwnProps
+>(({ css, children, ...props }, ref) => {
+	return (
+		<_Button ref={ref} whileHover={{ scale: 1.02 }} css={css} {...props}>
+			{children}
+		</_Button>
+	);
+});
+
+Button.displayName = "Button";

@@ -21,6 +21,9 @@ export const globalStyles = globalCss({
 		p: 0,
 		fontFamily: "$sans",
 	},
+	body: {
+		bg: "$gray",
+	},
 	a: {
 		alignItems: "center",
 		gap: "$xsm",
