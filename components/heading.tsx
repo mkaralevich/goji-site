@@ -8,28 +8,24 @@ export function Heading({
 	children: React.ReactNode;
 }) {
 	return (
-		<Flex
-			fill
-			justify="center"
-			align="center"
-			py="sm"
-			css={{ position: "relative" }}
-		>
-			<Box
+		<Flex fill py="sm" px="md" css={{ position: "relative", flexes: "ccc" }}>
+			<Flex
+				ml="md"
 				css={{
 					position: "absolute",
 					top: "50%",
 					transform: "translateY(-50%)",
-					left: 32,
-					s: 24,
+					left: 0,
+					s: 16,
 					radius: "$round",
 					bg: "transparent",
-					b: "1px solid",
-					bc: `$${fg}`,
+					b: `1px solid $${fg}`,
+
+					"@sm": { s: 24 },
 				}}
 			/>
 
-			<Text t="500" fg={fg}>
+			<Text t="500" fg={fg} align="center">
 				{children}
 			</Text>
 		</Flex>

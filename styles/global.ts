@@ -14,15 +14,16 @@ export const globalStyles = globalCss({
 		WebkitFontSmoothing: "antialiased",
 		MozOsxFontSmoothing: "grayscale",
 		WebkitTextSizeAdjust: "100%",
+		"::selection": { bg: "$yellow", fg: "$black" },
+
+		bg: "$gray",
 	},
+	body: { bg: "$gray" },
 	"*, *:before, *:after": {
 		boxSizing: "inherit",
 		m: 0,
 		p: 0,
 		fontFamily: "$sans",
-	},
-	body: {
-		bg: "$gray",
 	},
 	a: {
 		alignItems: "center",

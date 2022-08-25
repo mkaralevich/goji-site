@@ -35,18 +35,22 @@ export const {
 		},
 
 		sizes: {
-			pageMaxWidth: "102px",
+			pageMaxWidth: "1200px",
 		},
 
 		radii: {
 			img: "8px",
-			button: "32px",
+			button: "24px",
 			round: "999px",
 		},
 
 		shadows: {
 			elevation:
 				"0px 4px 24px rgba(0, 0, 0, 0.12), 0px 1px 4px rgba(0, 0, 0, 0.08)",
+		},
+
+		transitions: {
+			bg: "background .5s",
 		},
 
 		zIndices: {

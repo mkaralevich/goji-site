@@ -1,41 +1,32 @@
-import { motion } from "framer-motion";
 import React from "react";
 import { Heading } from "./heading";
-import { Box, Flex, Text } from "./primitives";
+import { Flex, Text } from "./primitives";
 
 function Card({ alt, img, title, desc }) {
 	return (
 		<Flex
 			fill
-			dir="col"
-			gap="sm"
+			gap="md"
+			p="md"
 			css={{
-				b: "1px dotted",
-				bc: "$blackAlpha",
-				p: 32,
+				flexes: "css",
+				b: "1px dotted $blackAlpha",
 				bg: "$gradientWhite",
-
-				transition: "background .5s",
+				transition: "$bg",
 
 				"&:hover": { bg: "white" },
 			}}
 		>
-			<Flex fill align="center" css={{}}>
-				<Box
-					as="img"
-					alt={alt}
-					src={img}
-					css={{
-						w: "100%",
-						maxw: "100%",
-						h: "auto",
-					}}
-				/>
+			<Flex fill align="center">
+				<Flex fill as="img" alt={alt} src={img} css={{ h: "auto" }} />
 			</Flex>
-			<Text t="150" fg="orange">
-				{title}
-			</Text>
-			<Text t="100">{desc}</Text>
+
+			<Flex fill dir="col" gap="sm">
+				<Text t="150" fg="orange">
+					{title}
+				</Text>
+				<Text t="100">{desc}</Text>
+			</Flex>
 		</Flex>
 	);
 }
@@ -50,29 +41,35 @@ const bullets = [
 	{
 		alt: "",
 		img: "/2.png",
-		title: "Quickly capture",
+		title: "Easy check-in",
 		desc: "Productivity app that helps parents organize their kids’ education and stay on track.",
 	},
 	{
 		alt: "",
 		img: "/3.png",
-		title: "Stats",
+		title: "Stats at glance",
 		desc: "Productivity app that helps parents organize their kids’ education and stay on track.",
 	},
 	{
 		alt: "",
 		img: "/1.png",
-		title: "Export",
+		title: "Export lessons",
 		desc: "Productivity app that helps parents organize their kids’ education and stay on track.",
 	},
 ];
 
 export default function Progress() {
 	return (
-		<Flex fill dir="col" gap="lg" bg="gradientOrange" pb="xlg">
+		<Flex fill gap="lg" pb="xlg" css={{ flexes: "ccc", bg: "$gradientOrange" }}>
 			<Heading fg="orange">All you need to make progress</Heading>
-			<Flex fill dir="col" gap="md" css={{ px: 128 }}>
-				<Flex fill gap="md">
+
+			<Flex
+				fill
+				gap="md"
+				px="xlg"
+				css={{ flexes: "ccc", maxw: "$pageMaxWidth" }}
+			>
+				<Flex fill gap="md" css={{ flexes: "css", "@sm": { flexes: "rss" } }}>
 					<Card
 						alt=""
 						img={bullets[0].img}
@@ -87,7 +84,7 @@ export default function Progress() {
 					/>
 				</Flex>
 
-				<Flex fill gap="md">
+				<Flex fill gap="md" css={{ flexes: "css", "@sm": { flexes: "rss" } }}>
 					<Card
 						alt=""
 						img={bullets[2].img}

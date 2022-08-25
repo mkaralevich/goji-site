@@ -3,9 +3,9 @@ import { styled } from "../../styles/stitches.config";
 const sizes = (key: string) => {
 	return {
 		sm: { [key]: 16 },
-		md: { [key]: 32 },
-		lg: { [key]: 80 },
-		xlg: { [key]: 128 },
+		md: { [key]: 16, "@sm": { [key]: 32 } },
+		lg: { [key]: 48, "@sm": { [key]: 48 }, "@md": { [key]: 80 } },
+		xlg: { [key]: 16, "@sm": { [key]: 32 }, "@md": { [key]: 128 } },
 	};
 };
 
@@ -53,13 +53,5 @@ export const Flex = styled("div", {
 		my: sizes("my"),
 		ml: sizes("ml"),
 		mr: sizes("mr"),
-
-		bg: {
-			gray: { bg: "$gray" },
-			white: { bg: "$white" },
-			gradientOrange: { bg: "$gradientOrange" },
-			gradientWhite: { bg: "$gradientWhite" },
-			gradientYellow: { bg: "$gradientYellow" },
-		},
 	},
 });

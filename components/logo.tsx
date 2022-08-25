@@ -1,8 +1,14 @@
-export default function Logo() {
+import { Box } from "./primitives";
+
+export default function Logo({ size }: { size?: number }) {
+	const s = size
+		? { w: size, h: size }
+		: { w: 32, h: 32, "@sm": { w: 56, h: 56 } };
+
 	return (
-		<svg
-			width="56"
-			height="56"
+		<Box
+			as="svg"
+			css={s}
 			viewBox="0 0 56 56"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +35,6 @@ export default function Logo() {
 				d="M21.0603 10.4905C21.9467 14.1367 22.5507 18.0229 22.8199 21.2242L18.9257 21.5517C18.6729 18.5464 18.1006 14.8595 17.2629 11.4137C16.414 7.92181 15.3376 4.8697 14.1564 3.00559L17.4575 0.913803C18.9896 3.33159 20.1851 6.89034 21.0603 10.4905Z"
 				fill="#3E7247"
 			/>
-		</svg>
+		</Box>
 	);
 }

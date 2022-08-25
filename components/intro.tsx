@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Box, Button, Flex, Text } from "./primitives";
+import Logo from "./logo";
+import { Flex, Text } from "./primitives";
 
 const parent = {
 	initial: { opacity: 0 },
@@ -8,7 +9,6 @@ const parent = {
 		transition: {
 			type: "spring",
 			staggerChildren: 0.1,
-			delayChildren: 0.3,
 		},
 	},
 };
@@ -49,40 +49,50 @@ export default function Intro() {
 	return (
 		<Flex
 			fill
-			dir="col"
-			align="center"
-			css={{ pt: 168, pb: 128, bg: "$gray", px: 128 }}
+			p="xlg"
+			css={{
+				flexes: "ccc",
+				pt: 128,
+				bg: "linear-gradient(180deg, #F9FAFC 23.86%, #F9E6E4 100%)",
+			}}
 		>
 			<Flex
 				as={motion.div}
 				variants={parent}
 				initial="initial"
 				animate="animate"
-				dir="col"
 				gap="lg"
 				fill
-				css={{ maxw: 960 }}
+				css={{ flexes: "ccc", maxw: 960 }}
 			>
-				<Flex fill dir="col" gap="md">
+				<Flex fill gap="md" css={{ flexes: "css" }}>
+					<Flex
+						as={motion.div}
+						variants={child}
+						css={{ flexes: "rcc", gap: 4 }}
+					>
+						<Logo size={48} />
+						<Text t="300" fg="orange">
+							GOJI
+						</Text>
+					</Flex>
 					<Title />
-					<Text as={motion.p} t="300" width="paragraph" variants={child}>
+					<Text as={motion.p} t="300" w="paragraph" variants={child}>
 						Goji helps parents organize education for their kids and stay on
 						track.
 					</Text>
-					<Button variants={child}>Join waitlist</Button>
 				</Flex>
-				<Box
+				<Flex
 					as={motion.img}
 					variants={child}
 					src="/dash.png"
 					alt="dash"
 					css={{
 						all: "unset",
-						b: "1px solid",
-						bc: "$blackAlphaLight",
-						radius: "$img",
 						w: "100%",
 						h: "auto",
+						b: "1px solid $blackAlphaLight",
+						radius: "$img",
 						boxShadow: "$elevation",
 					}}
 				/>

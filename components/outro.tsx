@@ -1,37 +1,35 @@
-import { motion } from "framer-motion";
 import React from "react";
 import { Heading } from "./heading";
 import Logo from "./logo";
-import { Box, Button, Flex, t, Text } from "./primitives";
+import { Button, Flex, t, Text } from "./primitives";
 
 export default function Outro() {
 	return (
 		<Flex
 			fill
-			dir="col"
-			gap="lg"
-			bg="gradientYellow"
-			pb="xlg"
-			css={{ minh: "100vh" }}
+			gap="md"
+			pb="lg"
+			css={{ flexes: "ccc", minh: "100vh", bg: "$gradientYellow" }}
 		>
 			<Heading fg="orange">Get started with GOJI</Heading>
-			<Flex fill dir="col" justify="between" css={{ px: 128, flexGrow: 1 }}>
-				<Text t="400" align="center" fg="orange">
-					Organize your education and
-					<br />
-					stay on track
+			<Flex
+				fill
+				px="xlg"
+				css={{ flexes: "cbc", flexGrow: 1, maxw: "$pageMaxWidth" }}
+			>
+				<Text t="500" align="center" fg="orange" w="paragraph">
+					Organize your education and stay on track
 				</Text>
 
 				<Button
 					css={{
 						w: "100%",
 						py: 64,
-						bg: "$gradientWhite",
-						b: "1px dotted",
-						bc: "$orange",
 						radius: "$round",
-						...t[400],
+						b: "1px dotted $orange",
+						...t[500],
 						color: "$orange",
+						bg: "$gradientWhite",
 					}}
 				>
 					<Logo />

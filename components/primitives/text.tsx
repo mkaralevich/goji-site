@@ -2,11 +2,12 @@ import { styled } from "../../styles/stitches.config";
 
 export const t = {
 	600: {
-		fontSize: "28px",
-		lineHeight: "32px",
+		fontSize: "32px",
+		lineHeight: "36px",
 		letterSpacing: "2%",
 		fontWeight: 400,
-		"@sm": { fontSize: "64px", lineHeight: "72px" },
+		"@sm": { fontSize: "40px", lineHeight: "56px" },
+		"@lg": { fontSize: "80px", lineHeight: "96px" },
 	},
 	500: {
 		fontSize: "28px",
@@ -30,8 +31,8 @@ export const t = {
 		"@sm": { fontSize: "40px", lineHeight: "56px" },
 	},
 	300: {
-		fontSize: "18px",
-		lineHeight: "24px",
+		fontSize: "20px",
+		lineHeight: "28px",
 		fontWeight: 400,
 		fontFamily: "$sans",
 		"@sm": { fontSize: "28px", lineHeight: "48px" },
@@ -73,8 +74,8 @@ export const Text = styled("p", {
 		align: {
 			center: { textAlign: "center" },
 		},
-		width: {
-			paragraph: { maxWidth: 620 },
+		w: {
+			paragraph: { w: 320, "@sm": { w: 480 } },
 		},
 	},
 
