@@ -16,14 +16,17 @@ export default function Outro() {
 				bg: "$gradientYellow",
 			}}
 		>
-			<Heading fg="orange">Get started with GOJI</Heading>
+			<Heading fg="orange">Join GOJI</Heading>
 			<Flex
 				fill
 				px="xlg"
-				css={{ flexes: "cbc", flexGrow: 1, maxw: "$pageMaxWidth" }}
+				pt="xlg"
+				gap="md"
+				css={{ flexes: "csc", flexGrow: 1, maxw: "$pageMaxWidth", w: 900 }}
 			>
+				<Logo size={128} />
 				<Text t="500" align="center" fg="orange">
-					Organize your education and stay on track
+					Organize your education and stay on track
 				</Text>
 			</Flex>
 		</Flex>

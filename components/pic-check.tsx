@@ -1,0 +1,60 @@
+import { Box } from "./primitives";
+
+export default function Check() {
+	return (
+		<Box
+			as="svg"
+			width="100%"
+			height="100%"
+			viewBox="0 0 332 332"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<rect
+				x="8.5"
+				y="8.5"
+				width="149"
+				height="149"
+				rx="63.5"
+				fill="#CB996F"
+				stroke="white"
+			/>
+			<rect
+				x="8.5"
+				y="166.5"
+				width="149"
+				height="149"
+				rx="63.5"
+				fill="#CB996F"
+				stroke="white"
+			/>
+			<rect
+				x="166.5"
+				y="8.5"
+				width="149"
+				height="149"
+				rx="63.5"
+				fill="#CB996F"
+				stroke="white"
+			/>
+			<rect
+				x="174.5"
+				y="16.5"
+				width="133"
+				height="133"
+				rx="55.5"
+				fill="#CB996F"
+				stroke="white"
+			/>
+			<rect
+				x="166.5"
+				y="166.5"
+				width="149"
+				height="149"
+				rx="63.5"
+				fill="#CB996F"
+				stroke="white"
+			/>
+		</Box>
+	);
+}

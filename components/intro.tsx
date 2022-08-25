@@ -114,7 +114,12 @@ export default function Intro() {
 								? { opacity: 1, y: "-50%", x: "-50%" }
 								: { opacity: 0, y: "-40%", x: "-50%" }
 						}
-						transition={{ type: "spring", mass: 0.5, bounce: 0.5 }}
+						transition={{
+							type: "spring",
+							mass: 0.5,
+							stiffness: 100,
+							bounce: 1,
+						}}
 						src="/modal.png"
 						alt="dash"
 						css={{
