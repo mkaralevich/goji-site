@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import Logo from "./logo";
 import { Flex, Text } from "./primitives";
 
@@ -46,6 +47,15 @@ const Title = () => {
 };
 
 export default function Intro() {
+	const { scrollYProgress } = useScroll();
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		return scrollYProgress.onChange((latest) => {
+			setScrolled(latest > 0.05);
+		});
+	}, [scrollYProgress]);
+
 	return (
 		<Flex
 			fill
@@ -98,9 +108,13 @@ export default function Intro() {
 				>
 					<Flex
 						as={motion.img}
-						initial={{ opacity: 0, y: "-10%", x: "-50%" }}
-						animate={{ opacity: 1, y: "-50%", x: "-50%" }}
-						transition={{ type: "spring", bounce: 0.2, delay: 3 }}
+						initial={{ opacity: 0, y: "-40%", x: "-50%" }}
+						animate={
+							scrolled
+								? { opacity: 1, y: "-50%", x: "-50%" }
+								: { opacity: 0, y: "-40%", x: "-50%" }
+						}
+						transition={{ type: "spring", mass: 0.5, bounce: 0.5 }}
 						src="/modal.png"
 						alt="dash"
 						css={{
@@ -120,8 +134,7 @@ export default function Intro() {
 					<Flex
 						as={motion.div}
 						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ delay: 3 }}
+						animate={{ opacity: scrolled ? 1 : 0 }}
 						css={{
 							position: "absolute",
 							top: 0,

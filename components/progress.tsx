@@ -35,26 +35,26 @@ const bullets = [
 	{
 		alt: "",
 		img: "/1.png",
-		title: "Quickly capture",
-		desc: "Productivity app that helps parents organize their kids’ education and stay on track.",
+		title: "Quickly capture lessons",
+		desc: "Build your student curiculum or just add lessons on the go. You can assign students, select skills, or add files.",
 	},
 	{
 		alt: "",
 		img: "/2.png",
-		title: "Easy check-in",
-		desc: "Productivity app that helps parents organize their kids’ education and stay on track.",
+		title: "Check-in when done",
+		desc: "Make sure you track progress by checking in. Leave a note on how lesson went or add a simple impression.",
 	},
 	{
 		alt: "",
 		img: "/3.png",
-		title: "Stats at glance",
-		desc: "Productivity app that helps parents organize their kids’ education and stay on track.",
+		title: "See how you are doing",
+		desc: "See how your students’s skills progress over time and inform your curriculum.",
 	},
 	{
 		alt: "",
 		img: "/1.png",
-		title: "Export lessons",
-		desc: "Productivity app that helps parents organize their kids’ education and stay on track.",
+		title: "Export your progress",
+		desc: "Export your student lessons in suitable format when working on a report. Just select dates.",
 	},
 ];
 

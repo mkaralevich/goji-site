@@ -11,7 +11,8 @@ export default function Outro() {
 			pb="lg"
 			css={{
 				flexes: "ccc",
-				minh: "100vh",
+				h: "80vh",
+				minh: 800,
 				bg: "$gradientYellow",
 			}}
 		>
@@ -24,20 +25,6 @@ export default function Outro() {
 				<Text t="500" align="center" fg="orange">
 					Organize your education and stay on track
 				</Text>
-
-				{/* <Button
-					css={{
-						w: "100%",
-						py: 64,
-						radius: "80px",
-						b: "1px dotted $orange",
-						...t[500],
-						fg: "white",
-						bg: "$orange",
-					}}
-				>
-					Join waitlist
-				</Button> */}
 			</Flex>
 		</Flex>
 	);
