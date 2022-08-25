@@ -120,7 +120,7 @@ export default function Intro() {
 							stiffness: 100,
 							bounce: 1,
 						}}
-						src="/modal.png"
+						src="/modal.webp"
 						alt="modal"
 						css={{
 							all: "unset",

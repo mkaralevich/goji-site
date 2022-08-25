@@ -12,7 +12,7 @@ export default function Subscribe() {
 
 	useEffect(() => {
 		return scrollYProgress.onChange((latest) => {
-			setIsPageEnd(latest > 0.9);
+			setIsPageEnd(latest > 0.97);
 		});
 	}, [scrollYProgress]);
 
@@ -54,7 +54,7 @@ export default function Subscribe() {
 				transition={transition}
 				css={{
 					flexes: "rcc",
-					cursor: "pointer",
+					cursor: focused ? "text" : "pointer",
 					bg: "$orange",
 					py: 16,
 					px: 24,

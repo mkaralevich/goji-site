@@ -16,13 +16,18 @@ export default function Index() {
 			<Head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta name="description" content={description} />
+				<meta
+					name="keywords"
+					content="education, tracker, organizer, school, curriculum, unschool, kids, students"
+				/>
 				<meta property="og:title" content={title} key="title" />
 				<meta property="og:description" content={description} />
+				<meta property="og:url" content="https://karalevich.com" />
+				<meta property="og:type" content="website" />
 				<meta property="og:image" content="https://gogoji.app/thumb.jpg" />
 				<meta property="image:width" content="1920" />
 				<meta property="image:height" content="1080" />
-				<meta property="og:url" content="https://karalevich.com" />
-				<meta property="og:type" content="website" />
 				<title>{title}</title>
 			</Head>
 			<Flex

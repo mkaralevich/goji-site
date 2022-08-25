@@ -11,8 +11,8 @@ export default function Outro() {
 			pb="lg"
 			css={{
 				flexes: "ccc",
-				h: "80vh",
-				minh: 800,
+				h: "100vh",
+				minh: 900,
 				bg: "$gradientYellow",
 			}}
 		>
