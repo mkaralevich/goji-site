@@ -16,19 +16,19 @@ export const t = {
 		fontWeight: 400,
 		"@sm": { fontSize: "48px", lineHeight: "58px" },
 	},
-	"400b": {
-		fontSize: "24px",
-		lineHeight: "32px",
-		fontWeight: 400,
-		fontFamily: "$sans",
-		"@sm": { fontSize: "32px", lineHeight: "48px" },
-	},
 	400: {
 		fontSize: "24px",
 		lineHeight: "32px",
 		fontWeight: 400,
 		fontFamily: "$sans",
 		"@sm": { fontSize: "40px", lineHeight: "56px" },
+	},
+	"300b": {
+		fontSize: "20px",
+		lineHeight: "28px",
+		fontWeight: 500,
+		fontFamily: "$sans",
+		"@sm": { fontSize: "28px", lineHeight: "48px" },
 	},
 	300: {
 		fontSize: "20px",

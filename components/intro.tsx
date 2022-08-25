@@ -63,7 +63,7 @@ export default function Intro() {
 			px="md"
 			css={{
 				flexes: "ccc",
-				pt: 128,
+				pt: "20vh",
 				bg: "linear-gradient(180deg, #F9FAFC 23.86%, #F9E6E4 100%)",
 			}}
 		>
@@ -83,7 +83,7 @@ export default function Intro() {
 						css={{ flexes: "rcc", gap: 4 }}
 					>
 						<Logo size="small" />
-						<Text t="300" fg="orange">
+						<Text t="300b" fg="orange">
 							GOJI
 						</Text>
 					</Flex>
