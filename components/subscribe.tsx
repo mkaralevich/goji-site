@@ -12,7 +12,7 @@ export default function Subscribe() {
 
 	useEffect(() => {
 		return scrollYProgress.onChange((latest) => {
-			setIsPageEnd(latest > 0.97);
+			setIsPageEnd(latest > 0.9);
 		});
 	}, [scrollYProgress]);
 

@@ -11,9 +11,13 @@ export default function Outro() {
 			pb="lg"
 			css={{
 				flexes: "ccc",
-				h: "100vh",
-				minh: 900,
+				h: "90vh",
 				bg: "$gradientYellow",
+
+				"@sm": {
+					minh: 900,
+					h: "100vh",
+				},
 			}}
 		>
 			<Heading fg="orange">Join GOJI</Heading>
