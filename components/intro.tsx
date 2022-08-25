@@ -82,7 +82,7 @@ export default function Intro() {
 						variants={child}
 						css={{ flexes: "rcc", gap: 4 }}
 					>
-						<Logo size={48} />
+						<Logo size="small" />
 						<Text t="300" fg="orange">
 							GOJI
 						</Text>
@@ -121,7 +121,7 @@ export default function Intro() {
 							bounce: 1,
 						}}
 						src="/modal.png"
-						alt="dash"
+						alt="modal"
 						css={{
 							all: "unset",
 							position: "absolute",
@@ -152,8 +152,8 @@ export default function Intro() {
 					/>
 					<Flex
 						as="img"
-						src="/dash.png"
-						alt="dash"
+						src="/dash.webp"
+						alt="dashboard"
 						css={{
 							all: "unset",
 							w: "100%",

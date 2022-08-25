@@ -103,6 +103,7 @@ export default function Subscribe() {
 				<Flex
 					as="button"
 					type="submit"
+					aria-label="Subscribe"
 					css={{
 						all: "unset",
 						opacity: activeInput ? 1 : 0,

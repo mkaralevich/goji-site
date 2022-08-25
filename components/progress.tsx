@@ -21,7 +21,7 @@ function Card({ svg, title, desc }) {
 				"&:hover": { bg: "white" },
 			}}
 		>
-			<Flex align="center" css={{ w: "100%", maxw: 332 }}>
+			<Flex align="center" css={{ w: "100%", maxw: 256, "@sm": { maxw: 332 } }}>
 				{svg}
 			</Flex>
 
