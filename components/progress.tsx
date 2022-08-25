@@ -63,13 +63,13 @@ export default function Progress() {
 		<Flex fill gap="lg" pb="xlg" css={{ flexes: "ccc", bg: "$gradientOrange" }}>
 			<Heading fg="orange">All you need to make progress</Heading>
 
-			<Flex
-				fill
-				gap="md"
-				px="xlg"
-				css={{ flexes: "ccc", maxw: "$pageMaxWidth" }}
-			>
-				<Flex fill gap="md" css={{ flexes: "css", "@sm": { flexes: "rss" } }}>
+			<Flex fill gap="md" css={{ flexes: "ccc", maxw: "$pageMaxWidth" }}>
+				<Flex
+					fill
+					gap="md"
+					px="md"
+					css={{ flexes: "css", "@sm": { flexes: "rss" } }}
+				>
 					<Card
 						alt=""
 						img={bullets[0].img}
@@ -84,7 +84,12 @@ export default function Progress() {
 					/>
 				</Flex>
 
-				<Flex fill gap="md" css={{ flexes: "css", "@sm": { flexes: "rss" } }}>
+				<Flex
+					fill
+					gap="md"
+					px="md"
+					css={{ flexes: "css", "@sm": { flexes: "rss" } }}
+				>
 					<Card
 						alt=""
 						img={bullets[2].img}

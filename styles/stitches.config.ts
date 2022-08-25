@@ -31,7 +31,7 @@ export const {
 				"linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%)",
 			gradientOrange: "linear-gradient(180deg, #FFF5F3 0%, #fff 100%)",
 			gradientYellow:
-				"linear-gradient(180deg, #FEDA31 0%, rgba(254, 218, 49, 0) 100%)",
+				"linear-gradient(180deg, #FEDA31 0%, rgba(255, 255, 255, 100) 100%)",
 		},
 
 		sizes: {
@@ -54,7 +54,9 @@ export const {
 		},
 
 		zIndices: {
-			logo: 100,
+			subscribe: 300,
+			modal: 200,
+			overlay: 100,
 		},
 
 		fonts: {
@@ -72,6 +74,9 @@ export const {
 	},
 
 	utils: {
+		z: (value: Stitches.PropertyValue<"zIndex">) => ({
+			zIndex: value,
+		}),
 		/* sizes */
 		w: (value: Stitches.PropertyValue<"width">) => ({
 			width: value,

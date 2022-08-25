@@ -49,7 +49,8 @@ export default function Intro() {
 	return (
 		<Flex
 			fill
-			p="xlg"
+			py="xlg"
+			px="md"
 			css={{
 				flexes: "ccc",
 				pt: 128,
@@ -82,20 +83,66 @@ export default function Intro() {
 						track.
 					</Text>
 				</Flex>
+
 				<Flex
-					as={motion.img}
+					as={motion.div}
 					variants={child}
-					src="/dash.png"
-					alt="dash"
 					css={{
-						all: "unset",
-						w: "100%",
-						h: "auto",
-						b: "1px solid $blackAlphaLight",
+						position: "relative",
+						overflow: "hidden",
+						maxw: 960,
 						radius: "$img",
+						b: "1px solid $blackAlphaLight",
 						boxShadow: "$elevation",
 					}}
-				/>
+				>
+					<Flex
+						as={motion.img}
+						initial={{ opacity: 0, y: "-10%", x: "-50%" }}
+						animate={{ opacity: 1, y: "-50%", x: "-50%" }}
+						transition={{ type: "spring", bounce: 0.2, delay: 3 }}
+						src="/modal.png"
+						alt="dash"
+						css={{
+							all: "unset",
+							position: "absolute",
+							top: "50%",
+							left: "50%",
+							w: "45%",
+							z: "$modal",
+							h: "auto",
+							transform: "translate(-50%, -50%)",
+							radius: "$img",
+							b: "1px solid $blackAlphaLight",
+							boxShadow: "$elevation",
+						}}
+					/>
+					<Flex
+						as={motion.div}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 3 }}
+						css={{
+							position: "absolute",
+							top: 0,
+							left: 0,
+							w: "100%",
+							h: "100%",
+							z: "$overlay",
+							bg: "$blackAlphaLight",
+						}}
+					/>
+					<Flex
+						as="img"
+						src="/dash.png"
+						alt="dash"
+						css={{
+							all: "unset",
+							w: "100%",
+							h: "auto",
+						}}
+					/>
+				</Flex>
 			</Flex>
 		</Flex>
 	);

@@ -1,35 +1,43 @@
 import { motion, useScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import Logo from "./logo";
 import MailIcon from "./mail-icon";
 import { Button, Flex, t } from "./primitives";
 
-export function JoinWaitlist() {
+export default function Subscribe() {
+	const [y, setY] = useState(0);
 	const { scrollYProgress } = useScroll();
 
-	// scrollYProgress > .2
+	useEffect(() => {
+		return scrollYProgress.onChange((latest) => {
+			setY(latest);
+		});
+	}, [scrollYProgress]);
+
+	console.log("scrollYProgress:", y);
 
 	return (
 		<Flex
 			as={motion.div}
 			fill
-			initial={{ opacity: 0, scale: 0.9, rotate: -0.9 }}
+			initial={{ y: 120, scale: 0.8 }}
 			animate={{
-				opacity: 1,
+				y: 0,
 				scale: 1,
-				rotate: 0,
 			}}
 			transition={{
 				type: "spring",
 				stiffness: 200,
 				damping: 40,
 				mass: 0.5,
-				delay: 1,
+				delay: 0.5,
 			}}
 			px="md"
+			py="md"
 			css={{
 				position: "fixed",
-				zIndex: "$logo",
-				bottom: 16,
+				z: "$subscribe",
+				bottom: 0,
 				flexes: "ccc",
 			}}
 		>
