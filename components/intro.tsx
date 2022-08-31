@@ -64,7 +64,8 @@ export default function Intro() {
 			css={{
 				flexes: "ccc",
 				pt: "20vh",
-				bg: "linear-gradient(180deg, #F9FAFC 23.86%, #F9E6E4 100%)",
+				// bg: "linear-gradient(180deg, #F9FAFC 23.86%, #F9E6E4 100%)",
+				bg: "linear-gradient(180deg, #F9FAFC 0%, #FAF8EF 60.62%, #FDDE4B 73.28%, #FF8B38 81.13%, #CB996F 88.11%, #4EAD57 94.87%, #F9E6E4 100%);",
 			}}
 		>
 			<Flex

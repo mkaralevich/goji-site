@@ -8,6 +8,7 @@ export default function Subscribe() {
 	const { scrollYProgress } = useScroll();
 	const [isPageEnd, setIsPageEnd] = useState(false);
 	const [focused, setFocused] = useState(false);
+	const [signedUp, setSignedUp] = useState(false);
 	const [email, setEmail] = useState("");
 
 	useEffect(() => {
@@ -24,6 +25,25 @@ export default function Subscribe() {
 	};
 
 	const activeInput = focused || email.length > 0;
+
+	function handleSubmit(e) {
+		e.preventDefault();
+
+		const form = e.target;
+		fetch("***REMOVED***", {
+			method: "POST",
+			mode: "no-cors",
+			body: new FormData(form),
+		}).then(() => {
+			setSignedUp(true);
+			setEmail("");
+			(document.activeElement as HTMLElement).blur();
+			setTimeout(() => {
+				setSignedUp(false);
+			}, 3000);
+			form.reset();
+		});
+	}
 
 	return (
 		<Flex
@@ -43,10 +63,7 @@ export default function Subscribe() {
 		>
 			<Flex
 				as={motion.form}
-				onSubmit={(e) => {
-					e.preventDefault();
-					console.log("submitted: ", email);
-				}}
+				onSubmit={handleSubmit}
 				animate={{
 					y: isPageEnd ? "-25vh" : 0,
 					width: isPageEnd || activeInput ? 420 : 320,
@@ -66,19 +83,23 @@ export default function Subscribe() {
 				}}
 			>
 				<MailIcon />
+				<input type="hidden" name="u" value="***REMOVED***" />
+				<input type="hidden" name="id" value="***REMOVED***" />
 				<Flex
 					as="input"
 					type="email"
-					placeholder="Join waitlist"
+					name="MERGE0"
+					id="MERGE0"
+					placeholder={signedUp ? "Thank you!" : "Join waitlist"}
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 					onFocus={(e) => {
 						setFocused(true);
-						e.target.placeholder = "Enter email...";
+						e.target.placeholder = signedUp ? "Thank you" : "Enter email...";
 					}}
 					onBlur={(e) => {
 						setFocused(false);
-						e.target.placeholder = "Join waitlist";
+						e.target.placeholder = signedUp ? "Thank you!" : "Join waitlist";
 					}}
 					css={{
 						all: "unset",
@@ -107,6 +128,7 @@ export default function Subscribe() {
 					css={{
 						all: "unset",
 						opacity: activeInput ? 1 : 0,
+						cursor: "pointer",
 						display: "flex",
 						flexes: "ccc",
 					}}
