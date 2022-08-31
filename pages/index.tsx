@@ -7,6 +7,7 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 const title = "GOJI · Education tracker";
+const ogTitle = "GOJI · Organize education for your kids";
 const description =
 	"Goji helps parents organize education for their kids and stay on track";
 
@@ -21,13 +22,13 @@ export default function Index() {
 					name="keywords"
 					content="education, tracker, organizer, school, curriculum, unschool, kids, students"
 				/>
-				<meta property="og:title" content={title} key="title" />
+				<meta property="og:title" content={ogTitle} key="title" />
 				<meta property="og:description" content={description} />
-				<meta property="og:url" content="https://karalevich.com" />
+				<meta property="og:url" content="https://gogoji.app" />
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="https://gogoji.app/thumb.jpg" />
-				<meta property="image:width" content="1920" />
-				<meta property="image:height" content="1080" />
+				<meta property="og:image" content="https://gogoji.app/og.jpg" />
+				<meta property="image:width" content="1280" />
+				<meta property="image:height" content="720" />
 				<title>{title}</title>
 			</Head>
 			<Flex
