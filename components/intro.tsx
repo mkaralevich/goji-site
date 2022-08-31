@@ -58,14 +58,22 @@ export default function Intro() {
 
 	return (
 		<Flex
+			as={motion.div}
+			initial={{
+				background:
+					"linear-gradient(180deg, #F9FAFC 0%, #FAF8EF 100%, #FDDE4B 100%, #FF8B38 100%, #CB996F 100%, #4EAD57 100%, #F9E6E4 100%)",
+			}}
+			animate={{
+				background:
+					"linear-gradient(180deg, #F9FAFC 0%, #FAF8EF 60.62%, #FDDE4B 73.28%, #FF8B38 81.13%, #CB996F 88.11%, #4EAD57 94.87%, #F9E6E4 100%)",
+			}}
+			transition={{ type: "spring", stiffness: 20, damping: 10, mass: 1 }}
 			fill
 			py="xlg"
 			px="md"
 			css={{
 				flexes: "ccc",
 				pt: "20vh",
-				// bg: "linear-gradient(180deg, #F9FAFC 23.86%, #F9E6E4 100%)",
-				bg: "linear-gradient(180deg, #F9FAFC 0%, #FAF8EF 60.62%, #FDDE4B 73.28%, #FF8B38 81.13%, #CB996F 88.11%, #4EAD57 94.87%, #F9E6E4 100%);",
 			}}
 		>
 			<Flex
