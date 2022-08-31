@@ -142,7 +142,7 @@ export default function Intro() {
 						animate={{ opacity: scrolled ? 1 : 0 }}
 						css={{
 							position: "absolute",
-							top: 0,
+							top: "4.8%",
 							left: 0,
 							w: "100%",
 							h: "100%",

@@ -33,7 +33,7 @@ export default function Outro() {
 					Organize your education and stay on track
 				</Text>
 				<Text t="300" align="center" fg="orange">
-					Launching 2022 · Made in LA
+					Made in Los Angeles
 				</Text>
 			</Flex>
 		</Flex>
