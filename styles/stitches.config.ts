@@ -18,8 +18,8 @@ export const {
 			/* TOKENS */
 			/* fg */
 			black: "#000",
-			blackAlpha: "rgba(0, 0, 0, 0.32)",
-			blackAlphaLight: "rgba(0, 0, 0, 0.12)",
+			secondary: "rgba(0, 0, 0, 0.56)",
+			border: "rgba(0, 0, 0, 0.12)",
 			white: "#fff",
 			gray: "#F9FAFC",
 			orange: "#FB4926",
@@ -42,6 +42,8 @@ export const {
 			img: "8px",
 			button: "24px",
 			round: "999px",
+			modal: "24px",
+			input: "16px",
 		},
 
 		shadows: {

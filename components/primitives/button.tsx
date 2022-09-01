@@ -1,55 +1,41 @@
 import { motion } from "framer-motion";
-import * as React from "react";
-import { CSS, styled } from "../../styles/stitches.config";
-import { t } from "./text";
+import { styled } from "../../styles/stitches.config";
 
-const _Button = styled(motion.button, {
+export const Button = styled(motion.button, {
 	all: "unset",
 	boxSizing: "border-box",
-	userSelect: "none",
-	"&::before": { boxSizing: "border-box" },
-	"&::after": { boxSizing: "border-box" },
 
-	transition: "background .2s",
-	cursor: "pointer",
 	display: "inline-flex",
-	flexShrink: 0,
-	alignItems: "center",
-	justifyContent: "center",
-	WebkitTapHighlightColor: "transparent",
-
-	gap: 8,
-	radius: 24,
-	w: "fit-content",
-	py: 16,
+	flexes: "rcc",
 	px: 16,
-	b: "1px dotted $orange",
-	bg: "$gradientWhite",
-	fg: "$orange",
-	backdropFilter: "blur(16px)",
+	py: 16,
+	gap: 16,
+	radius: "$button",
+	cursor: "pointer",
+	bg: "$orange",
+	fg: "$white",
 
 	fontSize: "20px",
-	lineHeight: "24px",
+	lineHeight: "28px",
 	fontWeight: 400,
 	fontFamily: "$sans",
 
-	"@sm": { radius: 32, px: 32, fontSize: "28px", lineHeight: "48px" },
+	transition: "background .2s",
+
+	"@sm": {
+		fontSize: "28px",
+		lineHeight: "48px",
+		px: 32,
+		py: 16,
+	},
+
+	variants: {
+		variant: {
+			subscribe: { w: 320 },
+			send: { w: "100%", flexes: "rbc" },
+			close: { bg: "$white", p: 16, "&:hover": { bg: "$gray" } },
+		},
+	},
+
+	defaultVariants: { variant: "subscribe" },
 });
-
-type ButtonOwnProps = React.ComponentProps<typeof motion.button> & {
-	css?: CSS;
-	children?: React.ReactNode;
-};
-
-export const Button = React.forwardRef<
-	React.ElementRef<typeof _Button>,
-	ButtonOwnProps
->(({ css, children, ...props }, ref) => {
-	return (
-		<_Button ref={ref} whileHover={{ scale: 1.02 }} css={css} {...props}>
-			{children}
-		</_Button>
-	);
-});
-
-Button.displayName = "Button";

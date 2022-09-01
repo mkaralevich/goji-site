@@ -111,7 +111,7 @@ export default function Intro() {
 						overflow: "hidden",
 						maxw: 960,
 						radius: "$img",
-						b: "1px solid $blackAlphaLight",
+						b: "1px solid $border",
 						boxShadow: "$elevation",
 					}}
 				>
@@ -141,7 +141,7 @@ export default function Intro() {
 							h: "auto",
 							transform: "translate(-50%, -50%)",
 							radius: "$img",
-							b: "1px solid $blackAlphaLight",
+							b: "1px solid $border",
 							boxShadow: "$elevation",
 						}}
 					/>
@@ -156,7 +156,7 @@ export default function Intro() {
 							w: "100%",
 							h: "100%",
 							z: "$overlay",
-							bg: "$blackAlphaLight",
+							bg: "$border",
 						}}
 					/>
 					<Flex

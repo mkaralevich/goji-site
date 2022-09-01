@@ -1,4 +1,4 @@
-import { Box } from "./primitives";
+import { Box } from "../primitives";
 
 export default function ArrowIcon() {
 	const size = 24;

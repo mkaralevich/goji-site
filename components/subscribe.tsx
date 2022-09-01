@@ -1,141 +1,104 @@
-import { motion, useScroll } from "framer-motion";
-import { useEffect, useState } from "react";
-import ArrowIcon from "./arrow-icon";
-import MailIcon from "./mail-icon";
-import { Flex } from "./primitives";
+import React from "react";
+import SubscribeButton from "./subscribe-button";
+import * as Dialog from "./primitives/dialog";
+import * as Radio from "./primitives/radio";
+import { Button, Flex, Text } from "./primitives";
+import ArrowIcon from "./icons/arrow-icon";
+import XIcon from "./icons/x-icon";
+import Input from "./primitives/input";
+import Label from "./primitives/label";
 
 export default function Subscribe() {
-	const { scrollYProgress } = useScroll();
-	const [isPageEnd, setIsPageEnd] = useState(false);
-	const [focused, setFocused] = useState(false);
-	const [signedUp, setSignedUp] = useState(false);
-	const [email, setEmail] = useState("");
+	const [modalOpened, setModalOpened] = React.useState();
 
-	useEffect(() => {
-		return scrollYProgress.onChange((latest) => {
-			setIsPageEnd(latest > 0.9);
-		});
-	}, [scrollYProgress]);
+	// function handleSubmit(e) {
+	// 	e.preventDefault();
 
-	const transition = {
-		type: "spring",
-		stiffness: 200,
-		damping: 40,
-		mass: 0.5,
-	};
-
-	const activeInput = focused || email.length > 0;
-
-	function handleSubmit(e) {
-		e.preventDefault();
-
-		const form = e.target;
-		fetch("***REMOVED***", {
-			method: "POST",
-			mode: "no-cors",
-			body: new FormData(form),
-		}).then(() => {
-			setSignedUp(true);
-			setEmail("");
-			(document.activeElement as HTMLElement).blur();
-			setTimeout(() => {
-				setSignedUp(false);
-			}, 3000);
-			form.reset();
-		});
-	}
+	// 	const form = e.target;
+	// 	fetch("***REMOVED***", {
+	// 		method: "POST",
+	// 		mode: "no-cors",
+	// 		body: new FormData(form),
+	// 	}).then(() => {
+	// 		setSignedUp(true);
+	// 		setEmail("");
+	// 		(document.activeElement as HTMLElement).blur();
+	// 		setTimeout(() => {
+	// 			setSignedUp(false);
+	// 		}, 3000);
+	// 		form.reset();
+	// 	});
+	// }
 
 	return (
-		<Flex
-			as={motion.div}
-			fill
-			initial={{ y: 120, scale: 0.8 }}
-			animate={{ y: 0, scale: 1 }}
-			transition={{ ...transition, delay: 0.5 }}
-			px="md"
-			py="md"
-			css={{
-				position: "fixed",
-				z: "$subscribe",
-				bottom: 0,
-				flexes: "ccc",
-			}}
-		>
-			<Flex
-				as={motion.form}
-				onSubmit={handleSubmit}
-				animate={{
-					y: isPageEnd ? "-25vh" : 0,
-					width: isPageEnd || activeInput ? 420 : 320,
-				}}
-				transition={transition}
-				css={{
-					flexes: "rcc",
-					cursor: focused ? "text" : "pointer",
-					bg: "$orange",
-					py: 16,
-					px: 24,
-					gap: 16,
-					radius: 24,
-					maxw: "100%",
+		<Dialog.Root>
+			<Dialog.Trigger asChild>
+				<SubscribeButton />
+			</Dialog.Trigger>
 
-					"@sm": { radius: 32, px: 32, w: "auto" },
-				}}
-			>
-				<MailIcon />
-				<input type="hidden" name="u" value="***REMOVED***" />
-				<input type="hidden" name="id" value="***REMOVED***" />
-				<Flex
-					as="input"
-					type="email"
-					name="MERGE0"
-					id="MERGE0"
-					placeholder={signedUp ? "Thank you!" : "Join waitlist"}
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					onFocus={(e) => {
-						setFocused(true);
-						e.target.placeholder = signedUp ? "Thank you" : "Enter email...";
-					}}
-					onBlur={(e) => {
-						setFocused(false);
-						e.target.placeholder = signedUp ? "Thank you!" : "Join waitlist";
-					}}
-					css={{
-						all: "unset",
-						w: "100%",
-						fontSize: "20px",
-						lineHeight: "32px",
-						fontWeight: 400,
-						fontFamily: "$sans",
-						textAlign: activeInput ? "left" : "center",
-						fg: "$white",
-
-						"@sm": { fontSize: "28px", lineHeight: "48px" },
-
-						"&::placeholder": {
-							fg: "$white",
-							opacity: 1,
-							transition: "opacity 1s",
-						},
-						"&:focus": { "&::placeholder": { opacity: 0.4 } },
-					}}
-				/>
-				<Flex
-					as="button"
-					type="submit"
-					aria-label="Subscribe"
-					css={{
-						all: "unset",
-						opacity: activeInput ? 1 : 0,
-						cursor: "pointer",
-						display: "flex",
-						flexes: "ccc",
-					}}
-				>
-					<ArrowIcon />
+			<Dialog.Content>
+				<Flex fill css={{ flexes: "rbc" }}>
+					<Text t="200">Almost there</Text>
+					<Dialog.Close asChild>
+						<Button aria-label="Close" variant="close">
+							<XIcon />
+						</Button>
+					</Dialog.Close>
 				</Flex>
-			</Flex>
-		</Flex>
+
+				<Flex as="form" fill css={{ flexes: "css", gap: 24 }}>
+					<Input id="email" type="email" placeholder="Enter email" />
+
+					<Radio.Root aria-label="User type">
+						<Flex fill css={{ flexes: "css", gap: 24 }}>
+							<Radio.Group>
+								<Label variant="legend">How do you want to use Goji?</Label>
+								<Radio.Item id="parent" value="parent">
+									As a parent
+								</Radio.Item>
+								<Radio.Item id="teacher" value="teacher">
+									As a teacher
+								</Radio.Item>
+								<Radio.Item id="browsing" value="browsing">
+									Just browsing
+								</Radio.Item>
+							</Radio.Group>
+
+							<Radio.Group>
+								<Label variant="legend">How many students?</Label>
+								<Radio.Item id="1" value="1">
+									1
+								</Radio.Item>
+								<Radio.Item id="2" value="2">
+									2-5
+								</Radio.Item>
+								<Radio.Item id="3" value="3">
+									5+
+								</Radio.Item>
+							</Radio.Group>
+
+							<Radio.Group>
+								<Label variant="legend">How did you hear about us?</Label>
+								<Radio.Item id="1" value="1">
+									Social
+								</Radio.Item>
+								<Radio.Item id="2" value="2">
+									From friends
+								</Radio.Item>
+								<Radio.Item id="3" value="3">
+									Other
+								</Radio.Item>
+							</Radio.Group>
+						</Flex>
+					</Radio.Root>
+
+					<Dialog.Close asChild>
+						<Button variant="send">
+							Send <ArrowIcon />
+						</Button>
+					</Dialog.Close>
+				</Flex>
+			</Dialog.Content>
+		</Dialog.Root>
 	);
 }

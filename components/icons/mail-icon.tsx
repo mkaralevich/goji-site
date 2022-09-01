@@ -1,4 +1,4 @@
-import { Box } from "./primitives";
+import { Box } from "../primitives";
 
 export default function MailIcon() {
 	const size = 24;
