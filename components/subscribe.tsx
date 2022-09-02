@@ -24,9 +24,6 @@ export default function Subscribe() {
 		e.preventDefault();
 
 		const form = new FormData(e.target);
-		for (var pair of form.entries()) {
-			console.log(pair[0] + ", " + pair[1]);
-		}
 
 		fetch("***REMOVED***", {
 			method: "POST",
@@ -69,7 +66,6 @@ export default function Subscribe() {
 					<input type="hidden" name="u" value="***REMOVED***" />
 					<input type="hidden" name="id" value="***REMOVED***" />
 					<Input
-						id="mce-EMAIL"
 						name="EMAIL"
 						value={values.EMAIL}
 						onChange={(e) => setValues({ ...values, EMAIL: e.target.value })}
@@ -79,24 +75,18 @@ export default function Subscribe() {
 					/>
 
 					<Flex fill css={{ flexes: "css", gap: 24 }}>
-						<Radio.Root
-							name="ROLE"
-							aria-label="User role"
-							required
-							// value={values.ROLE}
-							// onValueChange={(value) => setValues({ ...values, ROLE: value })}
-						>
+						<Radio.Root name="ROLE" aria-label="User role" required>
 							<Radio.Group>
 								<Label htmlFor="ROLE" variant="legend">
 									How do you want to use Goji?
 								</Label>
-								<Radio.Item id="mce-ROLE-0" value="parent">
+								<Radio.Item id="mce-ROLE-0" value="I am a parent">
 									As a parent
 								</Radio.Item>
-								<Radio.Item id="mce-ROLE-1" value="teacher">
+								<Radio.Item id="mce-ROLE-1" value="I am a teacher">
 									As a teacher
 								</Radio.Item>
-								<Radio.Item id="mce-ROLE-2" value="browsing">
+								<Radio.Item id="mce-ROLE-2" value="I am just looking">
 									Just browsing
 								</Radio.Item>
 							</Radio.Group>
@@ -106,10 +96,6 @@ export default function Subscribe() {
 							name="STUDENTS"
 							aria-label="Number of students"
 							required
-							// value={values.STUDENTS}
-							// onValueChange={(value) =>
-							// 	setValues({ ...values, STUDENTS: value })
-							// }
 						>
 							<Radio.Group>
 								<Label htmlFor="STUDENTS" variant="legend">
@@ -118,35 +104,27 @@ export default function Subscribe() {
 								<Radio.Item id="mce-STUDENTS-0" value="1">
 									1
 								</Radio.Item>
-								<Radio.Item id="mce-STUDENTS-1" value="2">
+								<Radio.Item id="mce-STUDENTS-1" value="2-5">
 									2-5
 								</Radio.Item>
-								<Radio.Item id="mce-STUDENTS-2" value="3">
+								<Radio.Item id="mce-STUDENTS-2" value="5+">
 									5+
 								</Radio.Item>
 							</Radio.Group>
 						</Radio.Root>
 
-						<Radio.Root
-							name="CHANNEL"
-							aria-label="Channel"
-							required
-							// value={values.CHANNEL}
-							// onValueChange={(value) =>
-							// 	setValues({ ...values, CHANNEL: value })
-							// }
-						>
+						<Radio.Root name="CHANNEL" aria-label="Channel" required>
 							<Radio.Group>
 								<Label htmlFor="CHANNEL" variant="legend">
 									How did you hear about us?
 								</Label>
-								<Radio.Item id="mce-CHANNEL-0" value="social">
+								<Radio.Item id="mce-CHANNEL-0" value="Social">
 									Social
 								</Radio.Item>
-								<Radio.Item id="mce-CHANNEL-1" value="friends">
+								<Radio.Item id="mce-CHANNEL-1" value="Friends">
 									From friends
 								</Radio.Item>
-								<Radio.Item id="mce-CHANNEL-2" value="other">
+								<Radio.Item id="mce-CHANNEL-2" value="Other">
 									Other
 								</Radio.Item>
 							</Radio.Group>
