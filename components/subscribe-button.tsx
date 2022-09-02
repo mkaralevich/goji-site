@@ -14,11 +14,12 @@ const TRANSITION = {
 type ButtonOwnProps = VariantProps<typeof Button> & {
 	modalOpened: boolean;
 	setModalOpened: React.Dispatch<React.SetStateAction<boolean>>;
+	submitted: boolean;
 	css?: CSS;
 };
 
 const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
-	({ modalOpened, setModalOpened, ...props }, ref) => {
+	({ modalOpened, setModalOpened, submitted, ...props }, ref) => {
 		const { scrollYProgress } = useScroll();
 		const [pageEnd, setPageEnd] = React.useState(false);
 
@@ -59,7 +60,7 @@ const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
 					transition={TRANSITION}
 				>
 					<MailIcon />
-					Join waitlist
+					{submitted ? "Thank you!" : "Join waitlist"}
 				</Button>
 			</Flex>
 		);

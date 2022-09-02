@@ -8,33 +8,29 @@ import XIcon from "./icons/x-icon";
 import Input from "./primitives/input";
 import Label from "./primitives/label";
 
-const INITIAL_DATA = {
-	EMAIL: "",
-	ROLE: "",
-	STUDENTS: "",
-	CHANNEL: "",
-};
+const MAILCHIMP_URL = "***REMOVED***";
 
 export default function Subscribe() {
 	const [modalOpened, setModalOpened] = React.useState(false);
 	const [submitted, setSubmitted] = React.useState(false);
-	const [values, setValues] = React.useState(INITIAL_DATA);
+	const [email, setEmail] = React.useState("");
 
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		const form = new FormData(e.target);
+		const form = e.target;
 
-		fetch("***REMOVED***", {
+		fetch(MAILCHIMP_URL, {
 			method: "POST",
 			mode: "no-cors",
-			body: form,
+			body: new FormData(form),
 		}).then(() => {
 			setSubmitted(true);
-			// setModalOpened(false);
+			setModalOpened(false);
+			form.reset();
 			setTimeout(() => {
 				setSubmitted(false);
-			}, 3000);
+			}, 4000);
 		});
 	}
 
@@ -42,6 +38,7 @@ export default function Subscribe() {
 		<Dialog.Root open={modalOpened} onOpenChange={setModalOpened}>
 			<Dialog.Trigger asChild>
 				<SubscribeButton
+					submitted={submitted}
 					modalOpened={modalOpened}
 					setModalOpened={setModalOpened}
 				/>
@@ -67,8 +64,8 @@ export default function Subscribe() {
 					<input type="hidden" name="id" value="***REMOVED***" />
 					<Input
 						name="EMAIL"
-						value={values.EMAIL}
-						onChange={(e) => setValues({ ...values, EMAIL: e.target.value })}
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 						type="email"
 						required
 						placeholder="Enter email"
@@ -80,13 +77,13 @@ export default function Subscribe() {
 								<Label htmlFor="ROLE" variant="legend">
 									How do you want to use Goji?
 								</Label>
-								<Radio.Item id="mce-ROLE-0" value="I am a parent">
+								<Radio.Item id="r0" value="I am a parent">
 									As a parent
 								</Radio.Item>
-								<Radio.Item id="mce-ROLE-1" value="I am a teacher">
+								<Radio.Item id="r1" value="I am a teacher">
 									As a teacher
 								</Radio.Item>
-								<Radio.Item id="mce-ROLE-2" value="I am just looking">
+								<Radio.Item id="r2" value="I am just looking">
 									Just browsing
 								</Radio.Item>
 							</Radio.Group>
@@ -101,13 +98,13 @@ export default function Subscribe() {
 								<Label htmlFor="STUDENTS" variant="legend">
 									How many students?
 								</Label>
-								<Radio.Item id="mce-STUDENTS-0" value="1">
+								<Radio.Item id="s0" value="1">
 									1
 								</Radio.Item>
-								<Radio.Item id="mce-STUDENTS-1" value="2-5">
+								<Radio.Item id="s1" value="2-5">
 									2-5
 								</Radio.Item>
-								<Radio.Item id="mce-STUDENTS-2" value="5+">
+								<Radio.Item id="s2" value="5+">
 									5+
 								</Radio.Item>
 							</Radio.Group>
@@ -118,13 +115,13 @@ export default function Subscribe() {
 								<Label htmlFor="CHANNEL" variant="legend">
 									How did you hear about us?
 								</Label>
-								<Radio.Item id="mce-CHANNEL-0" value="Social">
+								<Radio.Item id="c0" value="Social">
 									Social
 								</Radio.Item>
-								<Radio.Item id="mce-CHANNEL-1" value="Friends">
+								<Radio.Item id="c1" value="Friends">
 									From friends
 								</Radio.Item>
-								<Radio.Item id="mce-CHANNEL-2" value="Other">
+								<Radio.Item id="c2" value="Other">
 									Other
 								</Radio.Item>
 							</Radio.Group>
