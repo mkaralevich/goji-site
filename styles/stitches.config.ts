@@ -20,6 +20,7 @@ export const {
 			black: "#000",
 			secondary: "rgba(0, 0, 0, 0.56)",
 			border: "rgba(0, 0, 0, 0.12)",
+			overlay: "rgba(0, 0, 0, 0.16)",
 			white: "#fff",
 			gray: "#F9FAFC",
 			orange: "#FB4926",

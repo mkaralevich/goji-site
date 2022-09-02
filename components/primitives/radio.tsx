@@ -1,10 +1,10 @@
 import React from "react";
 import { styled } from "../../styles/stitches.config";
 import { Flex } from "./flex";
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
+import * as Primitive from "@radix-ui/react-radio-group";
 import Label from "./label";
 
-export const Root = RadioGroupPrimitive.Root;
+export const Root = Primitive.Root;
 
 export const Group = styled("fieldset", {
 	all: "unset",
@@ -16,7 +16,7 @@ export const Group = styled("fieldset", {
 	gap: 8,
 });
 
-const _Radio = styled(RadioGroupPrimitive.Item, {
+const _Radio = styled(Primitive.Item, {
 	all: "unset",
 	boxSizing: "border-box",
 
@@ -32,7 +32,7 @@ const _Radio = styled(RadioGroupPrimitive.Item, {
 	"&:focus, &[data-state='checked']": { bc: "$blue" },
 });
 
-const _Indicator = styled(RadioGroupPrimitive.Indicator, {
+const _Indicator = styled(Primitive.Indicator, {
 	display: "flex",
 	flexes: "ccc",
 	w: "100%",
@@ -52,10 +52,11 @@ const _Indicator = styled(RadioGroupPrimitive.Indicator, {
 type RadioItemProps = {
 	value: string;
 	id: string;
+	name: string;
 	children: React.ReactNode;
 };
 
-export const Item = ({ value, id, children }: RadioItemProps) => {
+export const Item = ({ value, id, name, children }: RadioItemProps) => {
 	return (
 		<Flex fill css={{ flexes: "rsc", gap: 12 }}>
 			<_Radio value={value} id={id}>

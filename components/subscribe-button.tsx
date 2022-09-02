@@ -11,12 +11,22 @@ const TRANSITION = {
 	mass: 0.5,
 };
 
-type ButtonOwnProps = VariantProps<typeof Button> & { css?: CSS };
+type ButtonOwnProps = VariantProps<typeof Button> & {
+	modalOpened: boolean;
+	setModalOpened: React.Dispatch<React.SetStateAction<boolean>>;
+	css?: CSS;
+};
 
 const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
-	(props, ref) => {
+	({ modalOpened, setModalOpened, ...props }, ref) => {
 		const { scrollYProgress } = useScroll();
 		const [pageEnd, setPageEnd] = React.useState(false);
+
+		const setButtonY = () => {
+			if (modalOpened) return 320;
+			else if (pageEnd) return "-25vh";
+			return 0;
+		};
 
 		React.useEffect(() => {
 			return scrollYProgress.onChange((latest) => {
@@ -38,10 +48,11 @@ const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
 				<Button
 					ref={ref}
 					{...props}
+					onClick={() => setModalOpened(true)}
 					initial={{ width: 320, y: 0, scale: 0.8 }}
 					animate={{
 						width: pageEnd ? 420 : 320,
-						y: pageEnd ? "-25vh" : 0,
+						y: setButtonY(),
 						scale: 1,
 					}}
 					whileHover={{ y: -4 }}
