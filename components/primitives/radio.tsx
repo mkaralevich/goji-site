@@ -1,16 +1,16 @@
 import React from "react";
-import { styled } from "../../styles/stitches.config";
+import { styled, VariantProps } from "../../styles/stitches.config";
 import { Flex } from "./flex";
 import * as Primitive from "@radix-ui/react-radio-group";
 import Label from "./label";
 
 export const Root = Primitive.Root;
 
-export const Group = styled("fieldset", {
-	all: "unset",
-	boxSizing: "border-box",
+export const Group = styled(Flex, {
+	// all: "unset",
+	// boxSizing: "border-box",
 
-	display: "flex",
+	// display: "flex",
 	flexes: "css",
 	w: "100%",
 	gap: 8,
@@ -52,17 +52,20 @@ const _Indicator = styled(Primitive.Indicator, {
 type RadioItemProps = {
 	value: string;
 	id: string;
-	name: string;
 	children: React.ReactNode;
 };
 
-export const Item = ({ value, id, name, children }: RadioItemProps) => {
-	return (
-		<Flex fill css={{ flexes: "rsc", gap: 12 }}>
-			<_Radio value={value} id={id}>
-				<_Indicator />
-			</_Radio>
-			<Label htmlFor={id}>{children}</Label>
-		</Flex>
-	);
-};
+export const Item = React.forwardRef<HTMLButtonElement, RadioItemProps>(
+	({ value, id, children, ...props }, ref) => {
+		return (
+			<Flex fill css={{ flexes: "rsc", gap: 12 }}>
+				<_Radio ref={ref} value={value} id={id} {...props}>
+					<_Indicator />
+				</_Radio>
+				<Label htmlFor={id}>{children}</Label>
+			</Flex>
+		);
+	}
+);
+
+Item.displayName = "Item";

@@ -8,37 +8,27 @@ import XIcon from "./icons/x-icon";
 import Input from "./primitives/input";
 import Label from "./primitives/label";
 
-const INITIAL_FORM = {
-	u: "***REMOVED***",
-	id: "***REMOVED***",
+const INITIAL_DATA = {
 	EMAIL: "",
 	ROLE: "",
 	STUDENTS: "",
-	MERGE3: "",
+	CHANNEL: "",
 };
 
 export default function Subscribe() {
 	const [modalOpened, setModalOpened] = React.useState(false);
 	const [submitted, setSubmitted] = React.useState(false);
-	const [values, setValues] = React.useState(INITIAL_FORM);
+	const [values, setValues] = React.useState(INITIAL_DATA);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 
 		console.log("data", e.target);
 
-		function getFormData(object) {
-			const formData = new FormData();
-			Object.keys(object).forEach((key) => formData.append(key, object[key]));
-			return formData;
-		}
-		const form = getFormData(values);
-		console.log("form:", form);
-
 		fetch("***REMOVED***", {
 			method: "POST",
 			mode: "no-cors",
-			body: form,
+			body: new FormData(e.target),
 		}).then(() => {
 			setSubmitted(true);
 			// setModalOpened(false);
@@ -89,20 +79,21 @@ export default function Subscribe() {
 						<Radio.Root
 							name="ROLE"
 							aria-label="User role"
-							value={values.ROLE}
-							onValueChange={(value) => setValues({ ...values, ROLE: value })}
+							required
+							// value={values.ROLE}
+							// onValueChange={(value) => setValues({ ...values, ROLE: value })}
 						>
 							<Radio.Group>
 								<Label htmlFor="ROLE" variant="legend">
 									How do you want to use Goji?
 								</Label>
-								<Radio.Item id="mce-ROLE-0" name="ROLE" value="parent">
+								<Radio.Item id="mce-ROLE-0" value="parent">
 									As a parent
 								</Radio.Item>
-								<Radio.Item id="mce-ROLE-1" name="ROLE" value="teacher">
+								<Radio.Item id="mce-ROLE-1" value="teacher">
 									As a teacher
 								</Radio.Item>
-								<Radio.Item id="mce-ROLE-2" name="ROLE" value="browsing">
+								<Radio.Item id="mce-ROLE-2" value="browsing">
 									Just browsing
 								</Radio.Item>
 							</Radio.Group>
@@ -111,22 +102,23 @@ export default function Subscribe() {
 						<Radio.Root
 							name="STUDENTS"
 							aria-label="Number of students"
-							value={values.STUDENTS}
-							onValueChange={(value) =>
-								setValues({ ...values, STUDENTS: value })
-							}
+							required
+							// value={values.STUDENTS}
+							// onValueChange={(value) =>
+							// 	setValues({ ...values, STUDENTS: value })
+							// }
 						>
 							<Radio.Group>
 								<Label htmlFor="STUDENTS" variant="legend">
 									How many students?
 								</Label>
-								<Radio.Item id="mce-STUDENTS-0" name="STUDENTS" value="1">
+								<Radio.Item id="mce-STUDENTS-0" value="1">
 									1
 								</Radio.Item>
-								<Radio.Item id="mce-STUDENTS-1" name="STUDENTS" value="2">
+								<Radio.Item id="mce-STUDENTS-1" value="2">
 									2-5
 								</Radio.Item>
-								<Radio.Item id="mce-STUDENTS-2" name="STUDENTS" value="3">
+								<Radio.Item id="mce-STUDENTS-2" value="3">
 									5+
 								</Radio.Item>
 							</Radio.Group>
@@ -135,20 +127,23 @@ export default function Subscribe() {
 						<Radio.Root
 							name="CHANNEL"
 							aria-label="Channel"
-							value={values.MERGE3}
-							onValueChange={(value) => setValues({ ...values, MERGE3: value })}
+							required
+							// value={values.CHANNEL}
+							// onValueChange={(value) =>
+							// 	setValues({ ...values, CHANNEL: value })
+							// }
 						>
-							<Radio.Group id="mergeRow-3">
-								<Label htmlFor="MERGE3" variant="legend">
+							<Radio.Group>
+								<Label htmlFor="CHANNEL" variant="legend">
 									How did you hear about us?
 								</Label>
-								<Radio.Item id="mce-CHANNEL-0" name="CHANNEL" value="social">
+								<Radio.Item id="mce-CHANNEL-0" value="social">
 									Social
 								</Radio.Item>
-								<Radio.Item id="mce-CHANNEL-1" name="CHANNEL" value="friends">
+								<Radio.Item id="mce-CHANNEL-1" value="friends">
 									From friends
 								</Radio.Item>
-								<Radio.Item id="mce-CHANNEL-2" name="CHANNEL" value="other">
+								<Radio.Item id="mce-CHANNEL-2" value="other">
 									Other
 								</Radio.Item>
 							</Radio.Group>
