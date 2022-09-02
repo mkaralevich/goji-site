@@ -23,12 +23,15 @@ export default function Subscribe() {
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		console.log("data", e.target);
+		const form = new FormData(e.target);
+		for (var pair of form.entries()) {
+			console.log(pair[0] + ", " + pair[1]);
+		}
 
 		fetch("***REMOVED***", {
 			method: "POST",
 			mode: "no-cors",
-			body: new FormData(e.target),
+			body: form,
 		}).then(() => {
 			setSubmitted(true);
 			// setModalOpened(false);
