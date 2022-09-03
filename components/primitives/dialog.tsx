@@ -2,6 +2,7 @@ import React from "react";
 import { styled, keyframes } from "../../styles/stitches.config";
 import * as Primitive from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
+import { t } from "./text";
 
 export const Root = Primitive.Root;
 export const Trigger = Primitive.Trigger;
@@ -15,29 +16,31 @@ const contentShow = keyframes({
 const _Overlay = styled(Primitive.Overlay, {
 	position: "fixed",
 	inset: 0,
-	bg: "$overlay",
-	transition: "background 1s",
-});
-
-const _Content = styled("div", {
-	position: "fixed",
-	top: "50%",
-	left: "50%",
-	w: 420,
-	maxw: "450px",
-	maxh: "85vh",
-
-	display: "flex",
-	flexes: "css",
-	gap: 24,
 
 	bg: "$white",
-	boxShadow: "$elevation",
-	transform: "translate(-50%, -50%)",
-	radius: "$modal",
+	display: "grid",
+	placeItems: "top",
+	transition: "background 1s",
+	overflowY: "auto",
+
+	"@sm": { bg: "$overlay", placeItems: "center" },
+});
+
+export const Title = styled(Primitive.Title, { ...t["200"] });
+
+const _Content = styled("div", {
+	w: "100%",
+	display: "flex",
+	flexes: "css",
 	p: 24,
+	gap: 24,
+	bg: "$white",
+	boxShadow: "$elevation",
+	radius: 0,
 
 	"&:focus": { outline: "none" },
+
+	"@sm": { w: 420, radius: "$modal" },
 });
 
 export const Content = React.forwardRef<
@@ -46,25 +49,29 @@ export const Content = React.forwardRef<
 >(({ children, ...props }, ref) => {
 	return (
 		<Primitive.Portal>
-			<_Overlay />
-			<Primitive.Content asChild {...props}>
-				<_Content
-					key="modal"
-					ref={ref}
-					as={motion.div}
-					initial={{ opacity: 0, x: "-50%", y: "-40%" }}
-					animate={{ opacity: 1, x: "-50%", y: "-50%" }}
-					exit={{ opacity: 0, x: "-50%", y: "-40%" }}
-					transition={{
-						type: "spring",
-						stiffness: 200,
-						damping: 20,
-						mass: 1,
-					}}
-				>
-					{children}
-				</_Content>
-			</Primitive.Content>
+			<_Overlay>
+				<Primitive.Content asChild {...props}>
+					<_Content
+						key="modal"
+						ref={ref}
+						as={motion.div}
+						// initial={{ opacity: 0, x: "-50%", y: "-40%" }}
+						// animate={{ opacity: 1, x: "-50%", y: "-50%" }}
+						// exit={{ opacity: 0, x: "-50%", y: "-40%" }}
+						initial={{ opacity: 0, y: 120 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: 120 }}
+						transition={{
+							type: "spring",
+							stiffness: 200,
+							damping: 20,
+							mass: 1,
+						}}
+					>
+						{children}
+					</_Content>
+				</Primitive.Content>
+			</_Overlay>
 		</Primitive.Portal>
 	);
 });

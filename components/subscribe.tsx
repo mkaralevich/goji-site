@@ -50,7 +50,7 @@ export default function Subscribe() {
 
 			<Dialog.Content>
 				<Flex fill css={{ flexes: "rbc" }}>
-					<Text t="200">Almost there</Text>
+					<Dialog.Title>Almost there</Dialog.Title>
 					<Dialog.Close asChild>
 						<Button aria-label="Close" variant="close">
 							<XIcon />

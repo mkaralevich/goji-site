@@ -1,5 +1,5 @@
 import React from "react";
-import Export from "./export";
+import Export from "./pic-export";
 import { Heading } from "./heading";
 import Capture from "./pic-capture";
 import Check from "./pic-check";
