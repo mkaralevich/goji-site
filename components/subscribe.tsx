@@ -1,8 +1,8 @@
 import * as React from "react";
 import SubscribeButton from "./subscribe-button";
-import * as Dialog from "./primitives/dialog";
+import * as Dialog from "./primitives/modal";
 import * as Radio from "./primitives/radio";
-import { Button, Flex, Text } from "./primitives";
+import { Button, Flex } from "./primitives";
 import ArrowIcon from "./icons/arrow-icon";
 import XIcon from "./icons/x-icon";
 import Input from "./primitives/input";
@@ -50,12 +50,7 @@ export default function Subscribe() {
 
 			<Dialog.Content>
 				<Flex fill css={{ flexes: "rbc" }}>
-					<Dialog.Title>Almost there</Dialog.Title>
-					<Dialog.Close asChild>
-						<Button aria-label="Close" variant="close">
-							<XIcon />
-						</Button>
-					</Dialog.Close>
+					<Dialog.Title>Almost there!</Dialog.Title>
 				</Flex>
 
 				<Flex
@@ -136,6 +131,20 @@ export default function Subscribe() {
 						Send <ArrowIcon />
 					</Button>
 				</Flex>
+				<Dialog.Close asChild>
+					<Button
+						css={{
+							position: "absolute",
+							top: 8,
+							right: 8,
+							"@sm": { top: 16, right: 16 },
+						}}
+						aria-label="Close"
+						variant="close"
+					>
+						<XIcon />
+					</Button>
+				</Dialog.Close>
 			</Dialog.Content>
 		</Dialog.Root>
 	);

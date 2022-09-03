@@ -9,6 +9,7 @@ import { Flex, Text } from "./primitives";
 function Card({ svg, title, desc }) {
 	return (
 		<Flex
+			as="article"
 			fill
 			gap="md"
 			p="md"
@@ -16,7 +17,7 @@ function Card({ svg, title, desc }) {
 				flexes: "css",
 				b: "1px dotted $blackAlpha",
 				bg: "$gradientWhite",
-				transition: "$bg",
+				transition: "background .5s",
 
 				"&:hover": { bg: "white" },
 			}}
@@ -26,7 +27,7 @@ function Card({ svg, title, desc }) {
 			</Flex>
 
 			<Flex fill dir="col" gap="sm">
-				<Text t="150" fg="orange">
+				<Text as="h3" t="150" fg="orange">
 					{title}
 				</Text>
 				<Text t="100">{desc}</Text>
@@ -60,7 +61,13 @@ const bullets = [
 
 export default function Progress() {
 	return (
-		<Flex fill gap="lg" pb="xlg" css={{ flexes: "ccc", bg: "$gradientOrange" }}>
+		<Flex
+			as="section"
+			fill
+			gap="lg"
+			pb="xlg"
+			css={{ flexes: "ccc", bg: "$gradientOrange" }}
+		>
 			<Heading fg="orange">Let’s make progress</Heading>
 
 			<Flex fill gap="md" css={{ flexes: "ccc", maxw: "$pageMaxWidth" }}>

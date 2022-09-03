@@ -25,42 +25,51 @@ const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
 
 		const setButtonY = () => {
 			if (modalOpened) return 320;
-			else if (pageEnd) return "-25vh";
+			else if (pageEnd) return "-20vh";
 			return 0;
 		};
 
 		React.useEffect(() => {
 			return scrollYProgress.onChange((latest) => {
-				setPageEnd(latest > 0.9);
+				setPageEnd(latest > 0.95);
 			});
 		}, [scrollYProgress]);
 
 		return (
 			<Flex
-				as={motion.div}
+				as={motion.nav}
 				initial={{ y: 320 }}
 				animate={{ y: 0 }}
 				transition={{ ...TRANSITION, delay: 0.5 }}
 				fill
 				px="md"
 				py="md"
-				css={{ position: "fixed", z: "$subscribe", bottom: 0, flexes: "ccc" }}
+				css={{
+					position: "fixed",
+					z: "$subscribeButton",
+					bottom: 0,
+					flexes: "ccc",
+				}}
 			>
-				<Button
-					ref={ref}
-					{...props}
-					onClick={() => setModalOpened(true)}
-					initial={{ width: 320, y: 0, scale: 0.8 }}
-					animate={{
-						width: pageEnd ? 420 : 320,
-						y: setButtonY(),
-						scale: 1,
-					}}
+				<Flex
+					as={motion.div}
+					initial={{ y: 0, scale: 0.8 }}
+					animate={{ y: setButtonY(), scale: 1 }}
 					transition={TRANSITION}
 				>
-					<MailIcon />
-					{submitted ? "Thank you!" : "Join waitlist"}
-				</Button>
+					<Button
+						ref={ref}
+						{...props}
+						onClick={() => setModalOpened(true)}
+						css={{
+							width: 320,
+							"@sm": { width: pageEnd ? 420 : 320 },
+						}}
+					>
+						<MailIcon />
+						{submitted ? "Thank you!" : "Join waitlist"}
+					</Button>
+				</Flex>
 			</Flex>
 		);
 	}

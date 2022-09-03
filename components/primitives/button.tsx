@@ -20,8 +20,8 @@ export const Button = styled(motion.button, {
 	fontWeight: 400,
 	fontFamily: "$sans",
 
-	transition: "background .2s, transform .2s",
-	"&:hover": { transform: "translateY(-4px)" },
+	transition: "background .2s, transform .2s, width .4s",
+	transitionTimingFunction: "cubic-bezier(0.210, 0.005, 0.020, 1.000)",
 
 	"@sm": {
 		fontSize: "28px",
@@ -32,9 +32,38 @@ export const Button = styled(motion.button, {
 
 	variants: {
 		variant: {
-			subscribe: { w: 320, "&:hover": { bg: "$orangeHover" } },
-			send: { w: "100%", flexes: "rbc", "&:hover": { bg: "$orangeHover" } },
-			close: { bg: "$white", p: 16, "&:hover": { bg: "$gray" } },
+			subscribe: {
+				"&:hover": {
+					bg: "$orangeHover",
+					transform: "translateY(-4px)",
+				},
+				"&:focus": {
+					bg: "$orangeHover",
+					transform: "scale(.98)",
+				},
+			},
+			send: {
+				w: "100%",
+				flexes: "rbc",
+
+				"& svg": { transition: "transform .2s" },
+
+				"&:hover": {
+					bg: "$orangeHover",
+					"& svg": { transform: "translateX(4px)" },
+				},
+
+				"&:focus": {
+					bg: "$orangeHover",
+					transform: "scale(.98)",
+				},
+			},
+
+			close: {
+				bg: "$white",
+				p: 16,
+				"&:hover, &:focus": { bg: "$gray" },
+			},
 		},
 	},
 

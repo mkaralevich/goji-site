@@ -6,6 +6,7 @@ import { Button, Flex, t, Text } from "./primitives";
 export default function Outro() {
 	return (
 		<Flex
+			as="section"
 			fill
 			gap="md"
 			pb="lg"
@@ -14,10 +15,7 @@ export default function Outro() {
 				h: "90vh",
 				bg: "$gradientYellow",
 
-				"@sm": {
-					minh: 900,
-					h: "100vh",
-				},
+				"@sm": { minh: 900, h: "100vh" },
 			}}
 		>
 			<Heading fg="orange">Join GOJI</Heading>

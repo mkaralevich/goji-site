@@ -12,10 +12,11 @@ const Input = styled("input", {
 
 	...t[100],
 	color: "black",
-	outline: "0px",
-	transition: "outline .2s",
+	// outline: "0px",
+	boxShadow: "none",
+	transition: "box-shadow .1s",
 
-	"&:focus": { outline: "4px solid $blue", bg: "$white" },
+	"&:focus": { boxShadow: "0px 0px 0px 3px $colors$blue", bg: "$white" },
 });
 
 export default Input;

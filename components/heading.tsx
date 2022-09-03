@@ -25,7 +25,7 @@ export function Heading({
 				}}
 			/>
 
-			<Text t="500" fg={fg} align="center">
+			<Text as="h2" t="500" fg={fg} align="center">
 				{children}
 			</Text>
 		</Flex>

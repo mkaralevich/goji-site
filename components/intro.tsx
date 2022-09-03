@@ -30,16 +30,18 @@ const child = {
 
 const Title = () => {
 	return (
-		<Flex as={motion.div} dir="col" fill variants={child}>
-			<Text t="600">Education tracker</Text>
-			<Text t="600">
-				for{" "}
-				<Text as="span" t="600" fg="green">
-					parents
-				</Text>{" "}
-				and{" "}
-				<Text as="span" t="600" fg="blue">
-					kids
+		<Flex as={motion.header} dir="col" fill variants={child}>
+			<Text as="h1" t="600">
+				Education tracker <br />
+				<Text as="span" t="600">
+					for{" "}
+					<Text as="span" t="600" fg="green">
+						parents
+					</Text>{" "}
+					and{" "}
+					<Text as="span" t="600" fg="blue">
+						kids
+					</Text>
 				</Text>
 			</Text>
 		</Flex>
@@ -58,7 +60,7 @@ export default function Intro() {
 
 	return (
 		<Flex
-			as={motion.div}
+			as={motion.section}
 			initial={{
 				background:
 					"linear-gradient(180deg, #F9FAFC 0%, #FAF8EF 100%, #FDDE4B 100%, #FF8B38 100%, #CB996F 100%, #4EAD57 100%, #F9E6E4 100%)",
@@ -137,7 +139,7 @@ export default function Intro() {
 							top: "50%",
 							left: "50%",
 							w: "45%",
-							z: "$modal",
+							z: "$introModalImg",
 							h: "auto",
 							transform: "translate(-50%, -50%)",
 							radius: "$img",
@@ -155,7 +157,7 @@ export default function Intro() {
 							left: 0,
 							w: "100%",
 							h: "100%",
-							z: "$overlay",
+							z: "$introImgOverlay",
 							bg: "$border",
 						}}
 					/>

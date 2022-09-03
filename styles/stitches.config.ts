@@ -19,7 +19,7 @@ export const {
 			secondary: "rgba(0, 0, 0, 0.56)",
 			border: "rgba(0, 0, 0, 0.12)",
 			overlay: "rgba(0, 0, 0, 0.16)",
-			orangeHover: "#F03E1B",
+			orangeHover: "#E1320F",
 			/* tokens */
 			black: "#000",
 			white: "#fff",
@@ -53,14 +53,11 @@ export const {
 				"0px 4px 24px rgba(0, 0, 0, 0.12), 0px 1px 4px rgba(0, 0, 0, 0.08)",
 		},
 
-		transitions: {
-			bg: "background .5s",
-		},
-
 		zIndices: {
-			subscribe: 300,
-			modal: 200,
-			overlay: 100,
+			dialogOverlay: 400,
+			subscribeButton: 300,
+			introModalImg: 200,
+			introImgOverlay: 100,
 		},
 
 		fonts: {

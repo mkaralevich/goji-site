@@ -32,7 +32,7 @@ export default function Index() {
 				<title>{title}</title>
 			</Head>
 			<Flex
-				as={motion.div}
+				as={motion.main}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				fill

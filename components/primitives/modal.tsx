@@ -16,6 +16,7 @@ const contentShow = keyframes({
 const _Overlay = styled(Primitive.Overlay, {
 	position: "fixed",
 	inset: 0,
+	z: "$dialogOverlay",
 
 	bg: "$white",
 	display: "grid",
@@ -29,6 +30,7 @@ const _Overlay = styled(Primitive.Overlay, {
 export const Title = styled(Primitive.Title, { ...t["200"] });
 
 const _Content = styled("div", {
+	position: "relative",
 	w: "100%",
 	display: "flex",
 	flexes: "css",
@@ -39,7 +41,6 @@ const _Content = styled("div", {
 	radius: 0,
 
 	"&:focus": { outline: "none" },
-
 	"@sm": { w: 420, radius: "$modal" },
 });
 
@@ -55,10 +56,7 @@ export const Content = React.forwardRef<
 						key="modal"
 						ref={ref}
 						as={motion.div}
-						// initial={{ opacity: 0, x: "-50%", y: "-40%" }}
-						// animate={{ opacity: 1, x: "-50%", y: "-50%" }}
-						// exit={{ opacity: 0, x: "-50%", y: "-40%" }}
-						initial={{ opacity: 0, y: 120 }}
+						initial={{ opacity: 0, y: -120 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: 120 }}
 						transition={{
