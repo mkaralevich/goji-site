@@ -20,7 +20,8 @@ export const Button = styled(motion.button, {
 	fontWeight: 400,
 	fontFamily: "$sans",
 
-	transition: "background .2s",
+	transition: "background .2s, transform .2s",
+	"&:hover": { transform: "translateY(-4px)" },
 
 	"@sm": {
 		fontSize: "28px",
@@ -31,8 +32,8 @@ export const Button = styled(motion.button, {
 
 	variants: {
 		variant: {
-			subscribe: { w: 320 },
-			send: { w: "100%", flexes: "rbc" },
+			subscribe: { w: 320, "&:hover": { bg: "$orangeHover" } },
+			send: { w: "100%", flexes: "rbc", "&:hover": { bg: "$orangeHover" } },
 			close: { bg: "$white", p: 16, "&:hover": { bg: "$gray" } },
 		},
 	},

@@ -8,7 +8,11 @@ import XIcon from "./icons/x-icon";
 import Input from "./primitives/input";
 import Label from "./primitives/label";
 
-const MAILCHIMP_URL = "***REMOVED***";
+const MAILCHIMP = {
+	URL: process.env.MAILCHIMP_URL as string,
+	U: process.env.MAILCHIMP_U as string,
+	ID: process.env.MAILCHIMP_ID as string,
+};
 
 export default function Subscribe() {
 	const [modalOpened, setModalOpened] = React.useState(false);
@@ -20,7 +24,7 @@ export default function Subscribe() {
 
 		const form = e.target;
 
-		fetch(MAILCHIMP_URL, {
+		fetch(MAILCHIMP.URL, {
 			method: "POST",
 			mode: "no-cors",
 			body: new FormData(form),
@@ -60,8 +64,8 @@ export default function Subscribe() {
 					fill
 					css={{ flexes: "css", gap: 24 }}
 				>
-					<input type="hidden" name="u" value="***REMOVED***" />
-					<input type="hidden" name="id" value="***REMOVED***" />
+					<input type="hidden" name="u" value={MAILCHIMP.U} />
+					<input type="hidden" name="id" value={MAILCHIMP.ID} />
 					<Input
 						name="EMAIL"
 						value={email}

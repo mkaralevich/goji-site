@@ -56,7 +56,6 @@ const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
 						y: setButtonY(),
 						scale: 1,
 					}}
-					whileHover={{ y: -4 }}
 					transition={TRANSITION}
 				>
 					<MailIcon />
