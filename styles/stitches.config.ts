@@ -18,6 +18,7 @@ export const {
 			/* semantics */
 			secondary: "rgba(0, 0, 0, 0.56)",
 			border: "rgba(0, 0, 0, 0.12)",
+			borderSecondary: "rgba(0, 0, 0, 0.08)",
 			overlay: "rgba(0, 0, 0, 0.16)",
 			orangeHover: "#E1320F",
 			/* tokens */

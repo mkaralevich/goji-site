@@ -38,8 +38,8 @@ export const t = {
 		"@sm": { fontSize: "28px", lineHeight: "48px" },
 	},
 	200: {
-		fontSize: "20px",
-		lineHeight: "24px",
+		fontSize: "24px",
+		lineHeight: "32px",
 		fontWeight: 400,
 		fontFamily: "$sans",
 		"@sm": { fontSize: "24px", lineHeight: "40px" },
@@ -67,6 +67,7 @@ export const Text = styled("p", {
 		t,
 		fg: {
 			black: { color: "$black" },
+			secondary: { color: "$secondary" },
 			green: { color: "$green" },
 			blue: { color: "$blue" },
 			orange: { color: "$orange" },

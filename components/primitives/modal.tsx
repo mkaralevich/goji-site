@@ -18,30 +18,35 @@ const _Overlay = styled(Primitive.Overlay, {
 	inset: 0,
 	z: "$dialogOverlay",
 
-	bg: "$white",
+	bg: "$overlay",
 	display: "grid",
-	placeItems: "top",
+	placeItems: "start center",
 	transition: "background 1s",
 	overflowY: "auto",
 
 	"@sm": { bg: "$overlay", placeItems: "center" },
 });
 
-export const Title = styled(Primitive.Title, { ...t["200"] });
+export const Title = styled(Primitive.Title, {
+	...t["200"],
+	fg: "$orange",
+	textAlign: "center",
+	w: "100%",
+});
 
 const _Content = styled("div", {
 	position: "relative",
-	w: "100%",
+	w: "calc(100% - 8px)",
 	display: "flex",
 	flexes: "css",
-	p: 24,
+	my: 4,
 	gap: 24,
 	bg: "$white",
 	boxShadow: "$elevation",
-	radius: 0,
+	radius: "$modal",
 
 	"&:focus": { outline: "none" },
-	"@sm": { w: 420, radius: "$modal" },
+	"@sm": { w: 420 },
 });
 
 export const Content = React.forwardRef<

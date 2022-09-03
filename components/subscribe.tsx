@@ -2,7 +2,7 @@ import * as React from "react";
 import SubscribeButton from "./subscribe-button";
 import * as Dialog from "./primitives/modal";
 import * as Radio from "./primitives/radio";
-import { Button, Flex } from "./primitives";
+import { Button, Flex, Text } from "./primitives";
 import ArrowIcon from "./icons/arrow-icon";
 import XIcon from "./icons/x-icon";
 import Input from "./primitives/input";
@@ -49,16 +49,28 @@ export default function Subscribe() {
 			</Dialog.Trigger>
 
 			<Dialog.Content>
-				<Flex fill css={{ flexes: "rbc" }}>
-					<Dialog.Title>Almost there!</Dialog.Title>
+				<Flex
+					fill
+					css={{
+						flexes: "rbc",
+						px: 24,
+						py: 16,
+						bb: "1px solid $borderSecondary",
+					}}
+				>
+					<Dialog.Title>Join waitlist</Dialog.Title>
 				</Flex>
 
 				<Flex
 					as="form"
 					onSubmit={handleSubmit}
 					fill
-					css={{ flexes: "css", gap: 24 }}
+					css={{ flexes: "css", gap: 24, px: 24, pb: 24 }}
 				>
+					<Text t="100" fg="green" align="center">
+						We'll notify you about product updates and when we have beta ready
+						for you.
+					</Text>
 					<input type="hidden" name="u" value={MAILCHIMP.U} />
 					<input type="hidden" name="id" value={MAILCHIMP.ID} />
 					<Input
@@ -133,12 +145,7 @@ export default function Subscribe() {
 				</Flex>
 				<Dialog.Close asChild>
 					<Button
-						css={{
-							position: "absolute",
-							top: 8,
-							right: 8,
-							"@sm": { top: 16, right: 16 },
-						}}
+						css={{ position: "absolute", top: 8, right: 8 }}
 						aria-label="Close"
 						variant="close"
 					>
