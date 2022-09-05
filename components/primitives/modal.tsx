@@ -28,9 +28,13 @@ const _Overlay = styled(Primitive.Overlay, {
 });
 
 export const Title = styled(Primitive.Title, {
-	...t["200"],
-	fg: "$orange",
-	textAlign: "center",
+	...t[300],
+	w: "100%",
+});
+
+export const Description = styled(Primitive.Description, {
+	...t[50],
+	fg: "$secondary",
 	w: "100%",
 });
 
@@ -40,6 +44,7 @@ const _Content = styled("div", {
 	display: "flex",
 	flexes: "css",
 	my: 4,
+	py: 24,
 	gap: 24,
 	bg: "$white",
 	boxShadow: "$elevation",

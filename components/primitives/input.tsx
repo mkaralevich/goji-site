@@ -8,9 +8,9 @@ const Input = styled("input", {
 	w: "100%",
 	radius: "$input",
 	p: 16,
-	bg: "$gray",
+	bg: "$inputBg",
 
-	...t[100],
+	...t[50],
 	color: "black",
 	// outline: "0px",
 	boxShadow: "none",

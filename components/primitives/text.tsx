@@ -56,6 +56,12 @@ export const t = {
 		fontWeight: 400,
 		fontFamily: "$sans",
 	},
+	50: {
+		fontSize: "16px",
+		lineHeight: "20px",
+		fontWeight: 400,
+		fontFamily: "$sans",
+	},
 };
 
 export const Text = styled("p", {
@@ -71,6 +77,7 @@ export const Text = styled("p", {
 			green: { color: "$green" },
 			blue: { color: "$blue" },
 			orange: { color: "$orange" },
+			white: { color: "$white" },
 		},
 		align: {
 			center: { textAlign: "center" },

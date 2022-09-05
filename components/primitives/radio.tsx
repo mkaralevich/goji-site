@@ -7,10 +7,6 @@ import Label from "./label";
 export const Root = Primitive.Root;
 
 export const Group = styled(Flex, {
-	// all: "unset",
-	// boxSizing: "border-box",
-
-	// display: "flex",
 	flexes: "css",
 	w: "100%",
 	gap: 8,
@@ -27,6 +23,7 @@ const _Radio = styled(Primitive.Item, {
 	bg: "$white",
 	b: "2px solid $border",
 	cursor: "pointer",
+	transition: "border .2s, background .2s",
 
 	"&:hover": { bg: "$gray" },
 	"&:focus, &[data-state='checked']": { bc: "$blue" },
@@ -35,17 +32,16 @@ const _Radio = styled(Primitive.Item, {
 const _Indicator = styled(Primitive.Indicator, {
 	display: "flex",
 	flexes: "ccc",
-	w: "100%",
-	h: "100%",
+	s: "100%",
 	position: "relative",
 
 	"&::after": {
 		content: '""',
 		display: "block",
-		width: 10,
-		height: 10,
+		s: 10,
 		radius: "$round",
 		bg: "$blue",
+		transition: "background .2s",
 	},
 });
 

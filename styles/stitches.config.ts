@@ -2,7 +2,6 @@ import * as Stitches from "@stitches/react";
 import { setFlexGroup, bp } from "../utils";
 
 export type { CSS, PropertyValue, VariantProps } from "@stitches/react";
-// export type CSS = Stitches.CSS<typeof config>;
 
 export const {
 	keyframes,
@@ -21,6 +20,7 @@ export const {
 			borderSecondary: "rgba(0, 0, 0, 0.08)",
 			overlay: "rgba(0, 0, 0, 0.16)",
 			orangeHover: "#E1320F",
+			inputBg: "#F5F6F8",
 			/* tokens */
 			black: "#000",
 			white: "#fff",

@@ -67,7 +67,7 @@ const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
 						}}
 					>
 						<MailIcon />
-						{submitted ? "Thank you!" : "Join waitlist"}
+						{submitted ? "Subscribed!" : "Join waitlist"}
 					</Button>
 				</Flex>
 			</Flex>

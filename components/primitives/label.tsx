@@ -7,7 +7,7 @@ const Label = styled("label", {
 
 	w: "100%",
 	fg: "black",
-	...t[100],
+	...t[50],
 
 	variants: {
 		variant: {

@@ -9,33 +9,48 @@ import Input from "./primitives/input";
 import Label from "./primitives/label";
 
 const MAILCHIMP = {
-	URL: process.env.MAILCHIMP_URL as string,
-	U: process.env.MAILCHIMP_U as string,
-	ID: process.env.MAILCHIMP_ID as string,
+	URL: "https://school.us11.list-manage.com/subscribe/post",
+	U: "9250a58d9f9545d9c1a77cdfc",
+	ID: "21ac349c1f",
 };
+// const MAILCHIMP = {
+// 	URL: process.env.NEXT_PUBLIC_MAILCHIMP_URL as string,
+// 	U: process.env.NEXT_PUBLIC_MAILCHIMP_U as string,
+// 	ID: process.env.NEXT_PUBLIC_MAILCHIMP_ID as string,
+// };
+
+console.log(
+	"process.env.NEXT_PUBLIC_MAILCHIMP_URL:",
+	process.env.MAILCHIMP_URL
+);
 
 export default function Subscribe() {
 	const [modalOpened, setModalOpened] = React.useState(false);
 	const [submitted, setSubmitted] = React.useState(false);
 	const [email, setEmail] = React.useState("");
 
-	function handleSubmit(e) {
+	async function handleSubmit(e) {
 		e.preventDefault();
 
 		const form = e.target;
-
-		fetch(MAILCHIMP.URL, {
+		const response = await fetch(MAILCHIMP.URL, {
 			method: "POST",
 			mode: "no-cors",
 			body: new FormData(form),
-		}).then(() => {
-			setSubmitted(true);
-			setModalOpened(false);
-			form.reset();
-			setTimeout(() => {
-				setSubmitted(false);
-			}, 4000);
 		});
+
+		if (!response.ok) {
+			console.log("response:", response.status);
+		}
+
+		setSubmitted(true);
+		setModalOpened(false);
+		form.reset();
+		setEmail("");
+
+		setTimeout(() => {
+			setSubmitted(false);
+		}, 4000);
 	}
 
 	return (
@@ -52,25 +67,35 @@ export default function Subscribe() {
 				<Flex
 					fill
 					css={{
-						flexes: "rbc",
+						flexes: "css",
 						px: 24,
-						py: 16,
-						bb: "1px solid $borderSecondary",
+						gap: 8,
+						// bb: "1px solid $borderSecondary",
 					}}
 				>
 					<Dialog.Title>Join waitlist</Dialog.Title>
+					<Dialog.Description>
+						We'll notify you about product updates and when we have beta ready
+						to try.
+					</Dialog.Description>
 				</Flex>
 
 				<Flex
 					as="form"
 					onSubmit={handleSubmit}
+					// action="https://school.us11.list-manage.com/subscribe/post?u=9250a58d9f9545d9c1a77cdfc&amp;id=21ac349c1f&amp;f_id=00f591e0f0"
+					// method="post"
+					// debug
+
 					fill
-					css={{ flexes: "css", gap: 24, px: 24, pb: 24 }}
+					css={{ flexes: "css", gap: 24, px: 24 }}
 				>
-					<Text t="100" fg="green" align="center">
-						We'll notify you about product updates and when we have beta ready
-						for you.
-					</Text>
+					{/* <Flex fill>
+						<Text t="50" fg="secondary">
+							We'll notify you about product updates and when we have beta ready
+							to try.
+						</Text>
+					</Flex> */}
 					<input type="hidden" name="u" value={MAILCHIMP.U} />
 					<input type="hidden" name="id" value={MAILCHIMP.ID} />
 					<Input
@@ -145,7 +170,12 @@ export default function Subscribe() {
 				</Flex>
 				<Dialog.Close asChild>
 					<Button
-						css={{ position: "absolute", top: 8, right: 8 }}
+						css={{
+							position: "absolute",
+							top: 4,
+							right: 4,
+							"@sm": { top: 8, right: 8 },
+						}}
 						aria-label="Close"
 						variant="close"
 					>
