@@ -1,30 +1,24 @@
 import { globalCss } from "./stitches.config";
 
 export const globalStyles = globalCss({
-	"@font-face": [
-		{
-			// fontFamily: "Sans",
-			// src: 'url("/fonts/basier-circle-regular.woff2")',
-			// fontWeight: 400,
-		},
-	],
-
 	html: {
 		boxSizing: "border-box",
 		WebkitFontSmoothing: "antialiased",
 		MozOsxFontSmoothing: "grayscale",
 		WebkitTextSizeAdjust: "100%",
 		"::selection": { bg: "$yellow", fg: "$black" },
-
 		bg: "$gray",
 	},
+
 	body: { bg: "$gray" },
+
 	"*, *:before, *:after": {
 		boxSizing: "inherit",
 		m: 0,
 		p: 0,
 		fontFamily: "$sans",
 	},
+
 	a: {
 		alignItems: "center",
 		gap: "$xsm",

@@ -62,7 +62,7 @@ export const {
 		},
 
 		fonts: {
-			sans: "Sans, Inter-Regular, -apple-system, system-ui",
+			sans: "-apple-system, system-ui, helvetica, sans-serif",
 			mono: "'iA Writer Mono S', Courier, Mono",
 		},
 	},

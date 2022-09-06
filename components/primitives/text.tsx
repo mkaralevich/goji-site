@@ -20,52 +20,45 @@ export const t = {
 		fontSize: "24px",
 		lineHeight: "32px",
 		fontWeight: 400,
-		fontFamily: "$sans",
 		"@sm": { fontSize: "40px", lineHeight: "56px" },
 	},
 	"300b": {
 		fontSize: "20px",
 		lineHeight: "28px",
 		fontWeight: 500,
-		fontFamily: "$sans",
 		"@sm": { fontSize: "28px", lineHeight: "48px" },
 	},
 	300: {
 		fontSize: "20px",
 		lineHeight: "28px",
 		fontWeight: 400,
-		fontFamily: "$sans",
 		"@sm": { fontSize: "28px", lineHeight: "48px" },
 	},
 	200: {
 		fontSize: "24px",
 		lineHeight: "32px",
 		fontWeight: 400,
-		fontFamily: "$sans",
 		"@sm": { fontSize: "24px", lineHeight: "40px" },
 	},
 	150: {
 		fontSize: "18px",
 		lineHeight: "24px",
 		fontWeight: 600,
-		fontFamily: "$sans",
 	},
 	100: {
 		fontSize: "18px",
 		lineHeight: "24px",
 		fontWeight: 400,
-		fontFamily: "$sans",
 	},
 	50: {
 		fontSize: "16px",
 		lineHeight: "20px",
 		fontWeight: 400,
-		fontFamily: "$sans",
 	},
 };
 
 export const Text = styled("p", {
-	fontFamily: "-apple-system",
+	fontFamily: "$sans",
 	fontStyle: "normal",
 	fg: "$fg",
 
