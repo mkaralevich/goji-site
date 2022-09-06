@@ -13,16 +13,6 @@ const MAILCHIMP = {
 	U: "9250a58d9f9545d9c1a77cdfc",
 	ID: "21ac349c1f",
 };
-// const MAILCHIMP = {
-// 	URL: process.env.NEXT_PUBLIC_MAILCHIMP_URL as string,
-// 	U: process.env.NEXT_PUBLIC_MAILCHIMP_U as string,
-// 	ID: process.env.NEXT_PUBLIC_MAILCHIMP_ID as string,
-// };
-
-console.log(
-	"process.env.NEXT_PUBLIC_MAILCHIMP_URL:",
-	process.env.MAILCHIMP_URL
-);
 
 export default function Subscribe() {
 	const [modalOpened, setModalOpened] = React.useState(false);
