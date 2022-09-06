@@ -8,11 +8,8 @@ import XIcon from "./icons/x-icon";
 import Input from "./primitives/input";
 import Label from "./primitives/label";
 
-const MAILCHIMP = {
-	URL: "https://school.us11.list-manage.com/subscribe/post",
-	U: "9250a58d9f9545d9c1a77cdfc",
-	ID: "21ac349c1f",
-};
+const MAILCHIMP_URL =
+	"https://school.us11.list-manage.com/subscribe/post?u=9250a58d9f9545d9c1a77cdfc&amp;id=21ac349c1f&amp;f_id=00f591e0f0";
 
 export default function Subscribe() {
 	const [modalOpened, setModalOpened] = React.useState(false);
@@ -23,7 +20,7 @@ export default function Subscribe() {
 		e.preventDefault();
 
 		const form = e.target;
-		const response = await fetch(MAILCHIMP.URL, {
+		const response = await fetch(MAILCHIMP_URL, {
 			method: "POST",
 			mode: "no-cors",
 			body: new FormData(form),
@@ -73,21 +70,9 @@ export default function Subscribe() {
 				<Flex
 					as="form"
 					onSubmit={handleSubmit}
-					// action="https://school.us11.list-manage.com/subscribe/post?u=9250a58d9f9545d9c1a77cdfc&amp;id=21ac349c1f&amp;f_id=00f591e0f0"
-					// method="post"
-					// debug
-
 					fill
 					css={{ flexes: "css", gap: 24, px: 24 }}
 				>
-					{/* <Flex fill>
-						<Text t="50" fg="secondary">
-							We'll notify you about product updates and when we have beta ready
-							to try.
-						</Text>
-					</Flex> */}
-					<input type="hidden" name="u" value={MAILCHIMP.U} />
-					<input type="hidden" name="id" value={MAILCHIMP.ID} />
 					<Input
 						name="EMAIL"
 						value={email}
