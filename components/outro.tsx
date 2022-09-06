@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { Heading } from "./heading";
 import Logo from "./logo";
@@ -26,12 +27,23 @@ export default function Outro() {
 				gap="md"
 				css={{ flexes: "csc", flexGrow: 1, maxw: "$pageMaxWidth" }}
 			>
-				<Logo size="large" />
+				<Flex
+					css={{
+						p: 12,
+						radius: "20px",
+						bg: "$white",
+						boxShadow: "$elevation",
+
+						"@sm": { p: 16, radius: "32px" },
+					}}
+				>
+					<Logo size="large" />
+				</Flex>
 				<Text t="500" align="center" fg="orange">
 					Organize your education and stay on track
 				</Text>
 				<Text t="300" align="center" fg="orange">
-					Made in Los Angeles
+					2022 · Made in LA, California
 				</Text>
 			</Flex>
 		</Flex>

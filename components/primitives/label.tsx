@@ -4,6 +4,7 @@ import { t } from "./text";
 const Label = styled("label", {
 	all: "unset",
 	boxSizing: "border-box",
+	WebkitTapHighlightColor: "transparent",
 
 	w: "100%",
 	fg: "black",

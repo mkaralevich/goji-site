@@ -15,6 +15,7 @@ export const Group = styled(Flex, {
 const _Radio = styled(Primitive.Item, {
 	all: "unset",
 	boxSizing: "border-box",
+	WebkitTapHighlightColor: "transparent",
 
 	s: 20,
 	maxs: 20,

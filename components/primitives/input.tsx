@@ -4,6 +4,7 @@ import { t } from "./text";
 const Input = styled("input", {
 	all: "unset",
 	boxSizing: "border-box",
+	WebkitTapHighlightColor: "transparent",
 
 	w: "100%",
 	radius: "$input",

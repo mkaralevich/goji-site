@@ -164,7 +164,7 @@ export default function Subscribe() {
 						</Radio.Root>
 					</Flex>
 
-					<Button type="submit" variant="send">
+					<Button type="submit" variant="send" disabled={submitted}>
 						Send <ArrowIcon />
 					</Button>
 				</Flex>

@@ -12,7 +12,7 @@ const Wrapper = styled("div", {
 			large: {
 				w: 56,
 				h: 56,
-				"@sm": { w: 128, h: 128 },
+				"@sm": { w: 96, h: 96 },
 			},
 		},
 	},

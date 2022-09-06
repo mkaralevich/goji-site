@@ -4,6 +4,8 @@ import { styled } from "../../styles/stitches.config";
 export const Button = styled(motion.button, {
 	all: "unset",
 	boxSizing: "border-box",
+	WebkitTapHighlightColor: "transparent",
+	userSelect: "none",
 
 	display: "inline-flex",
 	flexes: "rcc",
@@ -33,36 +35,41 @@ export const Button = styled(motion.button, {
 	variants: {
 		variant: {
 			subscribe: {
-				"&:hover": {
-					bg: "$orangeHover",
-					transform: "translateY(-4px)",
-				},
-				"&:focus": {
-					bg: "$orangeHover",
-					transform: "scale(.98)",
+				"@sm": {
+					"&:hover": {
+						bg: "$orangeHover",
+						transform: "translateY(-4px)",
+					},
+					"&:focus": {
+						bg: "$orangeHover",
+						transform: "scale(.98)",
+					},
 				},
 			},
 			send: {
 				w: "100%",
 				flexes: "rbc",
 
-				"& svg": { transition: "transform .2s" },
+				"@sm": {
+					"& svg": { transition: "transform .2s" },
 
-				"&:hover": {
-					bg: "$orangeHover",
-					"& svg": { transform: "translateX(4px)" },
-				},
+					"&:hover": {
+						bg: "$orangeHover",
+						"& svg": { transform: "translateX(4px)" },
+					},
 
-				"&:focus": {
-					bg: "$orangeHover",
-					transform: "scale(.98)",
+					"&:focus": {
+						bg: "$orangeHover",
+						transform: "scale(.98)",
+					},
 				},
 			},
 
 			close: {
 				bg: "$white",
 				p: 16,
-				"&:hover, &:focus": { bg: "$gray" },
+
+				"@sm": { "&:hover, &:focus": { bg: "$gray" } },
 			},
 		},
 	},

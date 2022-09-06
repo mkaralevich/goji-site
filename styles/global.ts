@@ -31,7 +31,6 @@ export const globalStyles = globalCss({
 		flexShrink: 0,
 		outline: "none",
 		textDecorationLine: "none",
-		WebkitTapHighlightColor: "transparent",
 		lineHeight: "inherit",
 		color: "inherit",
 
