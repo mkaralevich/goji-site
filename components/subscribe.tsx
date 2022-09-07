@@ -50,7 +50,11 @@ export default function Subscribe() {
 				/>
 			</Dialog.Trigger>
 
-			<Dialog.Content>
+			<Dialog.Content
+				onOpenAutoFocus={(e) => {
+					e.preventDefault();
+				}}
+			>
 				<Flex fill css={{ flexes: "css", px: 24, gap: 8 }}>
 					<Dialog.Title>Join waitlist</Dialog.Title>
 					<Dialog.Description>
