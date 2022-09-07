@@ -31,6 +31,7 @@ export default function Index() {
 				<meta property="image:height" content="720" />
 				<title>{title}</title>
 			</Head>
+
 			<Flex
 				as={motion.main}
 				initial={{ opacity: 0 }}
