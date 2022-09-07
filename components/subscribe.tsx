@@ -51,15 +51,7 @@ export default function Subscribe() {
 			</Dialog.Trigger>
 
 			<Dialog.Content>
-				<Flex
-					fill
-					css={{
-						flexes: "css",
-						px: 24,
-						gap: 8,
-						// bb: "1px solid $borderSecondary",
-					}}
-				>
+				<Flex fill css={{ flexes: "css", px: 24, gap: 8 }}>
 					<Dialog.Title>Join waitlist</Dialog.Title>
 					<Dialog.Description>
 						We'll notify you about product updates and when we have beta ready
@@ -100,11 +92,7 @@ export default function Subscribe() {
 							</Radio.Group>
 						</Radio.Root>
 
-						<Radio.Root
-							name="STUDENTS"
-							aria-label="Number of students"
-							required
-						>
+						<Radio.Root name="STUDENTS" aria-label="Number of students">
 							<Radio.Group>
 								<Label htmlFor="STUDENTS" variant="legend">
 									How many students?
@@ -121,7 +109,7 @@ export default function Subscribe() {
 							</Radio.Group>
 						</Radio.Root>
 
-						<Radio.Root name="CHANNEL" aria-label="Channel" required>
+						<Radio.Root name="CHANNEL" aria-label="Channel">
 							<Radio.Group>
 								<Label htmlFor="CHANNEL" variant="legend">
 									How did you hear about us?
