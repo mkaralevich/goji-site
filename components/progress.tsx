@@ -40,7 +40,7 @@ const bullets = [
 	{
 		svg: <Capture />,
 		title: "Quickly capture lessons",
-		desc: "Build your student curiculum or just add lessons on the go. You can assign students, select skills, or add files.",
+		desc: "Build your student curriculum or just add lessons on the go. You can assign students, select skills, or add files.",
 	},
 	{
 		svg: <Check />,
