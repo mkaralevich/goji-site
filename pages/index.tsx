@@ -46,6 +46,7 @@ export default function Index() {
             gtag('js', new Date());
             gtag('config', '${process.env.NEXT_PUBLIC_GTM}', {
               page_path: window.location.pathname,
+							cookie_flags: 'SameSite=None;Secure'
             });
           `,
 				}}
