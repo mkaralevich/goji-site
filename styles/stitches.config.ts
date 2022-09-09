@@ -22,7 +22,7 @@ export const {
 			orangeHover: "#E1320F",
 			inputBg: "#F5F6F8",
 			/* tokens */
-			black: "#000",
+			black: "#2B2F43",
 			white: "#fff",
 			gray: "#F9FAFC",
 			orange: "#FB4926",

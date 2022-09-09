@@ -5,7 +5,7 @@ const sizes = (key: string) => {
 		sm: { [key]: 16 },
 		md: { [key]: 16, "@sm": { [key]: 32 } },
 		lg: { [key]: 48, "@sm": { [key]: 48 }, "@md": { [key]: 80 } },
-		xlg: { [key]: 80, "@sm": { [key]: 128 }, "@md": { [key]: 128 } },
+		xlg: { [key]: 104, "@sm": { [key]: 128 }, "@md": { [key]: 128 } },
 	};
 };
 

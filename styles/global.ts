@@ -7,10 +7,10 @@ export const globalStyles = globalCss({
 		MozOsxFontSmoothing: "grayscale",
 		WebkitTextSizeAdjust: "100%",
 		"::selection": { bg: "$yellow", fg: "$black" },
-		bg: "$gray",
+		bg: "$white",
 	},
 
-	body: { bg: "$gray" },
+	body: { bg: "$white" },
 
 	"*, *:before, *:after": {
 		boxSizing: "inherit",
