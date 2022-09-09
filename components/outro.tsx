@@ -22,7 +22,7 @@ export default function Outro() {
 			<Heading fg="orange">Join GOJI</Heading>
 			<Flex
 				fill
-				px="lg"
+				px="md"
 				pt="xlg"
 				gap="md"
 				css={{ flexes: "csc", flexGrow: 1, maxw: "$pageMaxWidth" }}
