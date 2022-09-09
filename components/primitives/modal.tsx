@@ -47,7 +47,7 @@ const _Content = styled("div", {
 	py: 24,
 	gap: 24,
 	bg: "$white",
-	boxShadow: "$elevation",
+	boxShadow: "$elevationLarge",
 	radius: "$modal",
 
 	"&:focus": { outline: "none" },

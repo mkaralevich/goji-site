@@ -22,25 +22,14 @@ export default function Outro() {
 			<Heading fg="orange">Join GOJI</Heading>
 			<Flex
 				fill
-				px="md"
+				px="lg"
 				pt="xlg"
 				gap="md"
 				css={{ flexes: "csc", flexGrow: 1, maxw: "$pageMaxWidth" }}
 			>
-				<Flex
-					css={{
-						p: 12,
-						radius: "20px",
-						bg: "$white",
-						boxShadow: "$elevation",
-
-						"@sm": { p: 16, radius: "32px" },
-					}}
-				>
-					<Logo size="large" />
-				</Flex>
+				<Logo size="large" />
 				<Text t="500" align="center" fg="orange">
-					Organize your education and stay on track
+					Organize your education and stay on track
 				</Text>
 				<Text t="300" align="center" fg="orange">
 					2022 · Made in LA, California

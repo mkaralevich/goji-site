@@ -2,17 +2,37 @@ import { styled } from "../styles/stitches.config";
 import { Box } from "./primitives";
 
 const Wrapper = styled("div", {
+	bg: "$white",
+
 	variants: {
 		size: {
 			small: {
-				w: 32,
-				h: 32,
-				"@sm": { w: 56, h: 56 },
+				w: 48,
+				h: 48,
+				p: 8,
+				radius: "12px",
+				boxShadow: "$elevationSmall",
+				"@md": {
+					w: 56,
+					h: 56,
+					p: 8,
+					radius: "16px",
+					boxShadow: "$elevationLarge",
+				},
 			},
 			large: {
-				w: 56,
-				h: 56,
-				"@sm": { w: 96, h: 96 },
+				w: 96,
+				h: 96,
+				p: 12,
+				radius: "24px",
+				boxShadow: "$elevationSmall",
+				"@md": {
+					w: 128,
+					h: 128,
+					p: 16,
+					radius: "32px",
+					boxShadow: "$elevationLarge",
+				},
 			},
 		},
 	},

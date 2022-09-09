@@ -16,21 +16,26 @@ export const Flex = styled("div", {
 	variants: {
 		fill: { true: { width: "100%" } },
 
+		center: { true: { alignItems: "center", justifyContent: "center" } },
+
 		dir: {
 			row: { flexDirection: "row" },
 			col: { flexDirection: "column" },
 		},
+
 		align: {
 			start: { alignItems: "flex-start" },
 			center: { alignItems: "center" },
 			end: { alignItems: "flex-end" },
 		},
+
 		justify: {
 			start: { justifyContent: "flex-start" },
 			center: { justifyContent: "center" },
 			end: { justifyContent: "flex-end" },
 			between: { justifyContent: "space-between" },
 		},
+
 		wrap: {
 			noWrap: { flexWrap: "nowrap" },
 			wrap: { flexWrap: "wrap" },

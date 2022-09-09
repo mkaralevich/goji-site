@@ -50,8 +50,10 @@ export const {
 		},
 
 		shadows: {
-			elevation:
+			elevationLarge:
 				"0px 4px 24px rgba(0, 0, 0, 0.12), 0px 1px 4px rgba(0, 0, 0, 0.08)",
+			elevationSmall:
+				"0px 0px 12px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08)",
 		},
 
 		zIndices: {

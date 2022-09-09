@@ -2,19 +2,20 @@ import { styled } from "../../styles/stitches.config";
 
 export const t = {
 	600: {
-		fontSize: "32px",
-		lineHeight: "36px",
+		fontSize: "36px",
+		lineHeight: "40px",
 		letterSpacing: "2%",
 		fontWeight: 400,
-		"@sm": { fontSize: "40px", lineHeight: "56px" },
-		"@lg": { fontSize: "80px", lineHeight: "96px" },
+		"@sm": { fontSize: "58px", lineHeight: "64px" },
+		"@md": { fontSize: "80px", lineHeight: "96px" },
 	},
 	500: {
 		fontSize: "28px",
 		lineHeight: "32px",
 		letterSpacing: "2%",
 		fontWeight: 400,
-		"@sm": { fontSize: "48px", lineHeight: "58px" },
+		"@sm": { fontSize: "36px", lineHeight: "40px" },
+		"@md": { fontSize: "48px", lineHeight: "58px" },
 	},
 	400: {
 		fontSize: "24px",
@@ -23,10 +24,10 @@ export const t = {
 		"@sm": { fontSize: "40px", lineHeight: "56px" },
 	},
 	"300b": {
-		fontSize: "20px",
+		fontSize: "24px",
 		lineHeight: "28px",
 		fontWeight: 500,
-		"@sm": { fontSize: "28px", lineHeight: "48px" },
+		"@md": { fontSize: "40px", lineHeight: "48px" },
 	},
 	300: {
 		fontSize: "20px",

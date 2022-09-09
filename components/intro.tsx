@@ -9,7 +9,7 @@ const parent = {
 		opacity: 1,
 		transition: {
 			type: "spring",
-			staggerChildren: 0.1,
+			staggerChildren: 0.2,
 		},
 	},
 };
@@ -23,15 +23,15 @@ const child = {
 			type: "spring",
 			stiffness: 50,
 			damping: 10,
-			mass: 0.5,
+			mass: 1,
 		},
 	},
 };
 
 const Title = () => {
 	return (
-		<Flex as={motion.header} dir="col" fill variants={child}>
-			<Text as="h1" t="600">
+		<Flex as={motion.header} variants={child} fill css={{ flexes: "ccc" }}>
+			<Text as="h1" t="600" align="center">
 				Education tracker <br />
 				<Text as="span" t="600">
 					for{" "}
@@ -67,39 +67,47 @@ export default function Intro() {
 			}}
 			animate={{
 				background:
-					"linear-gradient(180deg, #F9FAFC 0%, #FAF8EF 60.62%, #FDDE4B 73.28%, #FF8B38 81.13%, #CB996F 88.11%, #4EAD57 94.87%, #F9E6E4 100%)",
+					"linear-gradient(180deg, #F9FAFC 0%, #FAF8EF 40%, #FDDE4B 60%, #FF8B38 75%, #CB996F 85%, #4EAD57 95%, #F9E6E4 100%)",
 			}}
 			transition={{ type: "spring", stiffness: 20, damping: 10, mass: 1 }}
 			fill
+			center
 			py="xlg"
 			px="md"
-			css={{
-				flexes: "ccc",
-				pt: "20vh",
-			}}
 		>
 			<Flex
 				as={motion.div}
 				variants={parent}
 				initial="initial"
 				animate="animate"
-				gap="lg"
 				fill
-				css={{ flexes: "ccc", maxw: 960 }}
+				dir="col"
+				gap="lg"
+				css={{ maxw: 960 }}
 			>
-				<Flex fill gap="md" css={{ flexes: "css" }}>
+				<Flex fill dir="col" center gap="md">
 					<Flex
 						as={motion.div}
 						variants={child}
-						css={{ flexes: "rcc", gap: 4 }}
+						fill
+						dir="row"
+						center
+						css={{ gap: 12, "@sm": { gap: 16 } }}
 					>
 						<Logo size="small" />
 						<Text t="300b" fg="orange">
 							GOJI
 						</Text>
 					</Flex>
+
 					<Title />
-					<Text as={motion.p} t="300" w="paragraph" variants={child}>
+					<Text
+						as={motion.p}
+						variants={child}
+						t="300"
+						w="paragraph"
+						align="center"
+					>
 						Goji helps parents organize education for their kids and stay on
 						track.
 					</Text>
@@ -114,7 +122,7 @@ export default function Intro() {
 						maxw: 960,
 						radius: "$img",
 						b: "1px solid $border",
-						boxShadow: "$elevation",
+						boxShadow: "$elevationLarge",
 					}}
 				>
 					<Flex
@@ -144,7 +152,7 @@ export default function Intro() {
 							transform: "translate(-50%, -50%)",
 							radius: "$img",
 							b: "1px solid $border",
-							boxShadow: "$elevation",
+							boxShadow: "$elevationLarge",
 						}}
 					/>
 					<Flex

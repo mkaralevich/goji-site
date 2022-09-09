@@ -63,7 +63,7 @@ const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
 						onClick={() => setModalOpened(true)}
 						css={{
 							width: 320,
-							boxShadow: "$elevation",
+							boxShadow: "$elevationLarge",
 							"@sm": { width: pageEnd ? 420 : 320 },
 						}}
 					>
