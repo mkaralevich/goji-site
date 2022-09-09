@@ -51,10 +51,12 @@ const Title = () => {
 export default function Intro() {
 	const { scrollYProgress } = useScroll();
 	const [scrolled, setScrolled] = useState(false);
+	const [scrolled2, setScrolled2] = useState(false);
 
 	useEffect(() => {
 		return scrollYProgress.onChange((latest) => {
-			setScrolled(latest > 0.05);
+			setScrolled(latest > 0.01);
+			setScrolled2(latest > 0.08);
 		});
 	}, [scrollYProgress]);
 
@@ -65,10 +67,12 @@ export default function Intro() {
 				background:
 					"linear-gradient(180deg, #FFF 0%, #FAF8EF 100%, #FDDE4B 100%, #FF8B38 100%, #CB996F 100%, #4EAD57 100%, #F9E6E4 100%)",
 			}}
-			animate={{
-				background:
-					"linear-gradient(180deg, #FFF 0%, #FAF8EF 50%, #FDDE4B 60%, #FF8B38 75%, #CB996F 85%, #4EAD57 95%, #F9E6E4 100%)",
-			}}
+			animate={
+				scrolled && {
+					background:
+						"linear-gradient(180deg, #FFF 0%, #FAF8EF 50%, #FDDE4B 60%, #FF8B38 75%, #CB996F 85%, #4EAD57 95%, #F9E6E4 100%)",
+				}
+			}
 			transition={{ type: "spring", stiffness: 20, damping: 10, mass: 1 }}
 			fill
 			center
@@ -129,7 +133,7 @@ export default function Intro() {
 						as={motion.img}
 						initial={{ opacity: 0, y: "-40%", x: "-50%" }}
 						animate={
-							scrolled
+							scrolled2
 								? { opacity: 1, y: "-50%", x: "-50%" }
 								: { opacity: 0, y: "-40%", x: "-50%" }
 						}
@@ -158,7 +162,7 @@ export default function Intro() {
 					<Flex
 						as={motion.div}
 						initial={{ opacity: 0 }}
-						animate={{ opacity: scrolled ? 1 : 0 }}
+						animate={{ opacity: scrolled2 ? 1 : 0 }}
 						css={{
 							position: "absolute",
 							top: "4.8%",

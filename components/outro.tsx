@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import React from "react";
 import { Heading } from "./heading";
 import Logo from "./logo";
-import { Button, Flex, t, Text } from "./primitives";
+import { Flex, Text } from "./primitives";
 
 export default function Outro() {
 	return (
