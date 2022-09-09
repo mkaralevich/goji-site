@@ -65,12 +65,12 @@ export default function Intro() {
 			as={motion.section}
 			initial={{
 				background:
-					"linear-gradient(180deg, #FFF 0%, #FAF8EF 100%, #FDDE4B 100%, #FF8B38 100%, #CB996F 100%, #4EAD57 100%, #F9E6E4 100%)",
+					"linear-gradient(180deg, #fff 0%, #FAEDED 100%, #FDDE4B 100%, #4EAD57 100%, #F9E6E4 100%)",
 			}}
 			animate={
 				scrolled && {
 					background:
-						"linear-gradient(180deg, #FFF 0%, #FAF8EF 50%, #FDDE4B 60%, #FF8B38 75%, #CB996F 85%, #4EAD57 95%, #F9E6E4 100%)",
+						"linear-gradient(180deg, #F9FAFC 0%, #FAEDED 55.21%, #E4FD4B 83.73%, #4EAD57 96.88%, #F9E6E4 100%)",
 				}
 			}
 			transition={{ type: "spring", stiffness: 20, damping: 10, mass: 1 }}
