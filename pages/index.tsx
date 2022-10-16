@@ -6,6 +6,7 @@ import { Flex } from "../components/primitives";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import Script from "next/script";
+import Pitch from "../components/pitch";
 
 const title = "GOJI · Education tracker";
 const ogTitle = "GOJI · Organize education for your kids";

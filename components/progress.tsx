@@ -66,7 +66,9 @@ export default function Progress() {
 			fill
 			gap="lg"
 			pb="xlg"
-			css={{ flexes: "ccc", bg: "$gradientOrange" }}
+			dir="col"
+			center
+			css={{ bg: "$gradientOrange" }}
 		>
 			<Heading fg="orange">Let’s make progress</Heading>
 

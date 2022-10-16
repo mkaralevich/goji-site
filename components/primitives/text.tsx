@@ -4,10 +4,9 @@ export const t = {
 	600: {
 		fontSize: "36px",
 		lineHeight: "40px",
-		letterSpacing: "2%",
 		fontWeight: 400,
-		"@sm": { fontSize: "58px", lineHeight: "64px" },
-		"@md": { fontSize: "80px", lineHeight: "96px" },
+		"@sm": { fontSize: "58px", lineHeight: "58px" },
+		"@md": { fontSize: "80px", lineHeight: "80px" },
 	},
 	500: {
 		fontSize: "28px",
@@ -33,7 +32,7 @@ export const t = {
 		fontSize: "20px",
 		lineHeight: "28px",
 		fontWeight: 400,
-		"@sm": { fontSize: "28px", lineHeight: "48px" },
+		"@sm": { fontSize: "28px", lineHeight: "40px" },
 	},
 	200: {
 		fontSize: "24px",

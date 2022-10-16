@@ -105,15 +105,9 @@ export default function Intro() {
 					</Flex>
 
 					<Title />
-					<Text
-						as={motion.p}
-						variants={child}
-						t="300"
-						w="paragraph"
-						align="center"
-					>
-						Goji helps parents organize education for their kids and stay on
-						track.
+					<Text as={motion.p} variants={child} t="300" align="center">
+						It's time to upgrade education stack.
+						<br /> Organize education for students and stay on track.
 					</Text>
 				</Flex>
 
