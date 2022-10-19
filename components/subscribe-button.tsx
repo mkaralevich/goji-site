@@ -15,12 +15,13 @@ type ButtonOwnProps = VariantProps<typeof Button> & {
 	modalOpened: boolean;
 	setModalOpened: React.Dispatch<React.SetStateAction<boolean>>;
 	submitted: boolean;
+	isInView: any;
 	css?: CSS;
 };
 
 const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
-	({ modalOpened, setModalOpened, submitted, ...props }, ref) => {
-		const { scrollYProgress } = useScroll();
+	({ modalOpened, setModalOpened, submitted, isInView, ...props }, ref) => {
+		// const { scrollYProgress } = useScroll();
 		const [pageEnd, setPageEnd] = React.useState(false);
 
 		const setButtonY = () => {
@@ -30,10 +31,9 @@ const SubscribeButton = forwardRef<HTMLButtonElement, ButtonOwnProps>(
 		};
 
 		React.useEffect(() => {
-			return scrollYProgress.onChange((latest) => {
-				setPageEnd(latest > 0.95);
-			});
-		}, [scrollYProgress]);
+			console.log("Element is in view: ", isInView);
+			setPageEnd(isInView);
+		}, [isInView]);
 
 		return (
 			<Flex

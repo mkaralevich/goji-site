@@ -11,7 +11,7 @@ import Label from "./primitives/label";
 const MAILCHIMP_URL =
 	"https://school.us11.list-manage.com/subscribe/post?u=9250a58d9f9545d9c1a77cdfc&amp;id=21ac349c1f&amp;f_id=00f591e0f0";
 
-export default function Subscribe() {
+export default function Subscribe({ isInView }) {
 	const [modalOpened, setModalOpened] = React.useState(false);
 	const [submitted, setSubmitted] = React.useState(false);
 	const [email, setEmail] = React.useState("");
@@ -47,6 +47,7 @@ export default function Subscribe() {
 					submitted={submitted}
 					modalOpened={modalOpened}
 					setModalOpened={setModalOpened}
+					isInView={isInView}
 				/>
 			</Dialog.Trigger>
 

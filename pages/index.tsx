@@ -60,7 +60,6 @@ export default function Index() {
 				fill
 				dir="col"
 			>
-				<Subscribe />
 				<Intro />
 				<Progress />
 				<Outro />
