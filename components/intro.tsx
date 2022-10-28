@@ -164,7 +164,7 @@ export default function Intro() {
 							w: "100%",
 							h: "100%",
 							z: "$introImgOverlay",
-							bg: "$border",
+							bg: "hsla(0, 0%, 17%, 8%)",
 						}}
 					/>
 					<Flex
